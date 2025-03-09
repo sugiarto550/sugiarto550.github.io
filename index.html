@@ -16,28 +16,68 @@
             position: absolute;
             top: 10px;
             right: 20px;
+            background-color:#e0c11069;
+            padding: 10px;
+            border-radius: 5px;
         }
         .navbar a {
             margin-left: 15px;
             text-decoration: none;
-            color: #cedb0ed2;
+            color:white;
             font-weight: bold;
+            padding: 5px 10px;
         }
-        h1 {color:rgb(136, 21, 202); }
-        p { margin-left: 20px}
+        .navbar a:hover {
+            background-color: #1e8b99;
+            border-radius: 3px; 
+        }
+        
+ /* Gaya untuk teks */
+ h1 { 
+            font-size: 36pt; 
+            color: rgb(136, 21, 202); 
+        }
+        h2 {
+            color: #cf43ac;
+        }
+        h3 {
+            color: red;
+            text-align: left;
+            font-size: 8pt;
+        }
+        p {
+            margin-left: 50px;
+        }
 
+        /* Gaya untuk link */
+        a {
+            color: #0ed8acb0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
     <div class="navbar">
+        <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
+        <a href="#">Kontak</a>
     </div>
+
+    <!-- Konten Utama -->
+    <h1>Selamat Datang!</h1>
+    <h2>Ini adalah halaman contoh</h2>
+    <h3>Silakan eksplorasi lebih lanjut</h3>
+    <p>Paragraf ini memiliki margin kiri 50px.</p>
 
     <h1>About Me</h1> 
     <h2>Perkenalkan, nama saya Bambang Sugiarto... ini adalah 
-        <i>Homepage</i>
-        <b>pertama</b>, saya Bambang Sugiarto, di sini saya baru belajar tentang
+        <i>Homepage</i> pertama saya. Di sini saya baru belajar tentang
         cara membuat <b><i>Homepage</i></b>.
     </h2>
 
@@ -45,5 +85,6 @@
     <a href="https://library.usu.ac.id/" target="_blank" rel="noopener noreferrer">
         Perpustakaan USU Bambang Sugiarto
     </a>
+
 </body>
 </html>
