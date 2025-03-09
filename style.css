@@ -1,0 +1,54 @@
+/* Mengatur tampilan navbar */
+.navbar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #10e044;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* Mengatur tampilan halaman utama */
+body {
+    background-color: #56d30e;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Mengatur warna teks */
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+h3 {
+    color: #666;
+}
+
+/* Mengatur tampilan link */
+a {
+    color: #0ed80e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
