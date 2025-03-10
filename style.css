@@ -60,3 +60,21 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+table {
+    margin: 0 auto; /* Menengahkan tabel */
+    border-collapse: collapse; /* Opsional: menggabungkan garis tepi */
+    width: 80%; /* Atur lebar tabel sesuai kebutuhan */
+  }
+  
+  /* Untuk menengahkan teks dalam sel tabel */
+  td, th {
+    text-align: center; /* Menengahkan teks horizontal */
+    padding: 8px; /* Opsional: menambahkan jarak dalam sel */
+    border: 1px solid #ddd; /* Opsional: menambahkan border */
+  }
+  
+  /* Opsional: styling header */
+  th {
+    background-color: #f2f2f2;
+  }
