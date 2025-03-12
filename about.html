@@ -2,24 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-		<title>About Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Me</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
         <a href="index.html">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
-        <a href="Kontak.html"</a>
-        <a href="blog.html">blog</a>
-
+        <a href="Kontak.html">Kontak</a>
+        <a href="blog.html">Blog</a>
     </div>
-	<h1>About Me</h1>
-	<p>halaman ini berisi tentang saya</p>
-    <table border="1" cellspacing="0" cellpadding="5">
+    
+    <h1>About Me</h1>
+    <p>Halaman ini berisi tentang saya</p>
+    
+    <table>
         <tr>
-            <!-- td = tabel data -->
             <td><b>Nama</b></td>
             <td>Bambang Sugiarto</td>
         </tr>
@@ -40,10 +65,9 @@
             <td>Universitas Sumatera Utara</td>
         </tr>
     </table>
-        
+    
     <h4>Halaman lain</h4>
     <ul>
-        <!-- Link ke Perpustakaan USU yang membuka di halaman baru -->
         <li>
             <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan USU</a>
         </li>
