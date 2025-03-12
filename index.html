@@ -3,42 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bambang Sugiarto</title>
     <link rel="stylesheet" href="style.css">
-    
+    <title>About Me</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .welcome-button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .welcome-button:hover {
+            background-color: #005f73;
+        }
+    </style>
+    <script>
+        document.write("<p>Script di antara tag head</p>");
+    </script>
 </head>
 <body>
-
-    <!-- Navbar -->
     <div class="navbar">
-        <a href="#">Beranda</a>
+        <a href="index.html">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
-        <a href="Kontak.html"</a>
-        <a href="blog.html">blog</a>
-
+        <a href="Kontak.html">Kontak</a>
+        <a href="blog.html">Blog</a>
     </div>
-
-    <div class="container">
-        <div class="main-content">
-            <h1>Selamat Datang di Website Bambang Sugiarto!</h1> 
-            <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-            <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
-            <p>Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
-         <!-- Tambahan teks baru -->
-         <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-            Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-            Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-            Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-            Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! </p>
-        </div>
-
-    </div>
-
-    <h3>Halaman lain</h3>
-    <a href="https://library.usu.ac.id/" target="_blank" rel="noopener noreferrer">
-        Perpustakaan USU - Sumber Ilmu dan Inspirasi
-    </a>
+    
+    <h1>About Me</h1>
+    <p>Halaman ini berisi tentang saya</p>
+    
+    <table>
+        <tr>
+            <td><b>Nama</b></td>
+            <td>Bambang Sugiarto</td>
+        </tr>
+        <tr>
+            <td>NIM</td>
+            <td>220709007</td>
+        </tr>
+        <tr>
+            <td>Program Studi</td>
+            <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+            <td>Fakultas</td>
+            <td>Ilmu Budaya</td>
+        </tr>
+        <tr>
+            <td>Universitas</td>
+            <td>Universitas Sumatera Utara</td>
+        </tr>
+    </table>
+    
+    <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+    
+    <h4>Halaman lain</h4>
+    <ul>
+        <li>
+            <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan USU</a>
+        </li>
+    </ul>
+    
+    <script>
+        document.write("<p>Script di antara tag body</p>");
+        function showWelcomeMessage() {
+            alert("Selamat datang di website Bambang Sugiarto!");
+        }
+    </script>
 </body>
 </html>
-
