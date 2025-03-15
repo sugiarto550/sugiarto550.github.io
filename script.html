@@ -1,0 +1,24 @@
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("footer").innerHTML = `
+        <footer>
+            <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
+        </footer>
+    `;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Tambahkan tombol otomatis ke dalam halaman
+    let buttonContainer = document.getElementById("welcome-button-container");
+    let button = document.createElement("button");
+    button.innerHTML = "Klik untuk Selamat Datang";
+    button.className = "welcome-button";
+    button.onclick = function() {
+        alert("Selamat datang di website Bambang Sugiarto!");
+    };
+    buttonContainer.appendChild(button);
+
+    // Tampilkan pesan otomatis saat halaman pertama kali dibuka
+    setTimeout(function() {
+        alert("Selamat datang di website Bambang Sugiarto!");
+    }, 1000); // Muncul setelah 1 detik
+});

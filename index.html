@@ -1,15 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bambang Sugiarto</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Styling untuk navbar */
+        .navbar {
+            background-color: #00695c;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            background-color: #004d40;
+            border-radius: 5px;
+        }
+
         /* Styling untuk footer */
         footer {
-            background-color: #e2b00d; /* Warna hijau tua */
-            color: white; /* Warna teks putih agar kontras */
+            background-color: #e2b00d;
+            color: white;
             text-align: center;
             padding: 15px 0;
             position: fixed;
@@ -22,10 +39,10 @@
 
     <!-- Navbar -->
     <div class="navbar">
-        <a href="#">Beranda</a>
+        <a href="index.html">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
-        <a href="Kontak.html">Kontak</a>
+        <a href="kontak.html">Kontak</a>
         <a href="blog.html">Blog</a>
         <a href="script.html">JavaScript</a>
     </div>
@@ -36,20 +53,8 @@
             <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
             <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
             <p>Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
-            
-            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! 
-            </p>
         </div>
     </div>
-
-    <!-- Teks Selamat Datang ditampilkan otomatis -->
-    <script>
-        document.write("<p>Selamat datang di Website Bambang Sugiarto</p>");
-    </script>
 
     <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
 
@@ -64,10 +69,9 @@
         }
     </script>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
-    </footer>
+    <!-- Footer otomatis ditambahkan di semua halaman -->
+    <div id="footer"></div>
+    <script src="footer.js"></script>
 
 </body>
 </html>
