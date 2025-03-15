@@ -22,3 +22,15 @@ document.addEventListener("DOMContentLoaded", function() {
 function showWelcomeMessage() {
     alert("Selamat datang di website Bambang Sugiarto!");
 }
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Beranda</a>
+        <a href="about.html">About Me</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="footer.js">JavaScript</a>
+    </div>
