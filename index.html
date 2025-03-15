@@ -8,7 +8,7 @@
     <style>
         /* Styling untuk footer */
         footer {
-            background-color: #e2b00d; /* Warna hijau tua */
+            background-color: #e2b00d; /* Warna kuning emas */
             color: white; /* Warna teks putih agar kontras */
             text-align: center;
             padding: 15px 0;
@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="showWelcomeMessage()">
 
     <!-- Navbar -->
     <div class="navbar">
@@ -42,22 +42,35 @@
                 Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
                 Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! 
             </p>
+
+            <!-- Menggunakan innerHTML -->
+            <p id="nama-id"></p>
         </div>
     </div>
 
-      <!-- Tombol manual untuk menampilkan pesan lagi -->
+    <!-- Tombol manual untuk menampilkan pesan lagi -->
     <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-    
+
     <h3>Halaman lain</h3>
     <a href="https://library.usu.ac.id/" target="_blank" rel="noopener noreferrer">
         Perpustakaan USU - Sumber Ilmu dan Inspirasi
     </a>
 
-     <!-- JavaScript agar pesan otomatis muncul saat halaman dibuka -->
-     <script>
+    <!-- JavaScript -->
+    <script>
+        // Menggunakan window.alert()
         function showWelcomeMessage() {
             alert("Selamat datang di website Bambang Sugiarto!");
         }
+
+        // Menggunakan document.write()
+        document.write("<p>Halo, ini ditampilkan menggunakan document.write()</p>");
+
+        // Menggunakan innerHTML
+        document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan dengan innerHTML.";
+
+        // Menggunakan console.log()
+        console.log("Hallo, ini ditampilkan di console log.");
     </script>
 
     <!-- Footer -->
