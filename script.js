@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let marquee = document.createElement("div");
-    marquee.innerText = "Selamat datang di Perpustakaan Sarah Nurul Azima!";
+    marquee.innerText = "Selamat datang di Website Perpustakaan Bambang Sugiarto!";
     marquee.style.position = "fixed";
     marquee.style.bottom = "10px";
     marquee.style.width = "100%";
