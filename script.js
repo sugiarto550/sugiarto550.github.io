@@ -40,10 +40,20 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("greeting").innerText = greetingText;
     }
     
-    // Fungsi untuk mengaktifkan mode gelap
+    // Fungsi untuk mengaktifkan mode kuning
     document.getElementById("toggle-mode").addEventListener("click", function() {
-        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("yellow-mode");
     });
+    
+    // Tambahkan CSS untuk mode kuning
+    let style = document.createElement("style");
+    style.innerHTML = `
+        .yellow-mode {
+            background-color: yellow !important;
+            color: black !important;
+        }
+    `;
+    document.head.appendChild(style);
     
     // Panggil fungsi salam saat halaman dimuat
     setGreeting();
