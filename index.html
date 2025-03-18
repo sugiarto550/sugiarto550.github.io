@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bambang Sugiarto</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <style>
-        /* Styling untuk tampilan */
+        /* Styling untuk tampilan cerah */
         body {
             margin: 0;
             overflow: hidden;
-            background-color: #282c34;
-            color: white;
+            background-color: #f9f9f9;
+            color: black;
             font-family: Arial, sans-serif;
         }
 
         /* Navbar */
         .navbar {
-            background: #e2b00d;
+            background: #00a8ff;
             padding: 15px;
             text-align: center;
         }
@@ -36,19 +35,20 @@
         }
 
         /* Tombol */
-        .welcome-button, #toggle-mode, #change-text {
+        .welcome-button, #change-text {
             margin-top: 10px;
             padding: 10px 15px;
-            background: #e2b00d;
+            background: #00a8ff;
             color: white;
             border: none;
             cursor: pointer;
             font-size: 16px;
+            border-radius: 5px;
         }
 
         /* Footer */
         footer {
-            background-color: #e2b00d;
+            background-color: #00a8ff;
             color: white;
             text-align: center;
             padding: 15px 0;
@@ -61,7 +61,7 @@
         .ball {
             width: 50px;
             height: 50px;
-            background-color: red;
+            background-color: #ff4757;
             border-radius: 50%;
             position: absolute;
             top: 50%;
@@ -75,10 +75,9 @@
     <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
-        <a href="about.html">About Me</a>
-        <a href="contact-us.html">Contact Us</a>
+        <a href="about.html">Tentang Saya</a>
+        <a href="contact-us.html">Hubungi</a>
         <a href="blog.html">Blog</a>
-        <a href="latihan-jql.html">Latihan JQL</a>
     </div>
 
     <!-- Konten utama -->
@@ -108,7 +107,6 @@
         <a href="https://library.usu.ac.id/" target="_blank" rel="noopener noreferrer">
             Perpustakaan USU - Sumber Ilmu dan Inspirasi
         </a>
-        <button id="toggle-mode">Mode Gelap</button>
     </div>
 
     <!-- Bola animasi -->
