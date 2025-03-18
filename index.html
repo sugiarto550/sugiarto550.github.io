@@ -10,38 +10,50 @@
         /* Styling untuk footer */
         footer {
             background-color: #e2b00d; /* Warna kuning emas */
-            color: white; /* Warna teks putih agar kontras */
+            color: white;
             text-align: center;
             padding: 15px 0;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
-
-        /* Styling untuk animasi HALLO */
-        body {
-            background-color: #c1e204;
-        }
-        .hallo-container {
+        
+        /* Styling untuk animasi lampu */
+        .lamp-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 50vh;
+            margin-top: 30px;
+        }
+        .lamp {
+            width: 100px;
+            height: 150px;
+            background-image: url('https://i.imgur.com/3m1CzX7.png'); /* Ganti dengan URL gambar lampu */
+            background-size: cover;
+            animation: spin 3s infinite linear;
         }
         .hallo {
             font-size: 50px;
             font-weight: bold;
-            color: white;
+            color: yellow;
             text-shadow: 2px 2px 5px black;
-            transform-style: preserve-3d;
-            animation: rotate 3s infinite linear;
+            margin-top: 20px;
+            animation: glow 1.5s infinite alternate;
         }
-        @keyframes rotate {
+        @keyframes spin {
             0% {
                 transform: rotateY(0deg);
             }
             100% {
                 transform: rotateY(360deg);
+            }
+        }
+        @keyframes glow {
+            0% {
+                text-shadow: 2px 2px 5px black;
+            }
+            100% {
+                text-shadow: 0 0 20px yellow;
             }
         }
     </style>
@@ -63,48 +75,41 @@
             <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
             <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
             <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
-            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi.</p>
         </div>
     
-        <!-- Elemen Animasi HALLO -->
-        <div class="hallo-container">
+        <!-- Animasi Lampu -->
+        <div class="lamp-container">
+            <div class="lamp"></div>
             <div class="hallo">HALLO</div>
         </div>
     
-        <!-- Tombol untuk jQuery -->
-        <button id="change-text">Klik untuk mengubah teks</button>
-        <button id="hide-text">Sembunyikan Paragraf</button>
+        <!-- Tombol manual untuk menampilkan pesan lagi -->
+        <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+    
+        <!-- JavaScript -->
+        <script>
+            function showWelcomeMessage() {
+                alert("Selamat datang di website Bambang Sugiarto!");
+            }
+            document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
+            console.log("Hallo, ini websitenya Bambang Sugiarto.");
+        </script>
+    
+        <!-- JavaScript jQuery -->
+        <script>
+            $(document).ready(function() {
+                $("#change-text").click(function() {
+                    $("#intro").text("Teks telah diubah menggunakan jQuery!");
+                });
+            });
+        </script>
     </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Fungsi untuk menampilkan pesan Selamat Datang
-        function showWelcomeMessage() {
-            alert("Selamat datang di website Bambang Sugiarto!");
-        }
-    </script>
-
-    <!-- jQuery untuk mengubah teks -->
-    <script>
-        $(document).ready(function() {
-            $("#change-text").click(function() {
-                $("#intro").text("Teks telah diubah menggunakan jQuery!");
-            });
-        });
-    </script>
-
-    <!-- jQuery untuk menyembunyikan paragraf -->
-    <script>
-        $(document).ready(function() {
-            $("#hide-text").click(function() {
-                $("p").hide();
-            });
-        });
-    </script>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
