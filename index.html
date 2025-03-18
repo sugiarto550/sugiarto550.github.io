@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,33 +16,6 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-
-        /* Styling untuk animasi HALLO */
-        body {
-            background-color: #dadd0d;
-        }
-        .hallo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-        }
-        .hallo {
-            font-size: 50px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 5px black;
-            transform-style: preserve-3d;
-            animation: rotate 3s infinite linear;
-        }
-        @keyframes rotate {
-            0% {
-                transform: rotateY(0deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
         }
     </style>
 </head>
@@ -63,23 +36,46 @@
             <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
             <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
             <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
-            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi.</p>
+            
+            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
+                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
+                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
+                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
+                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! 
+            </p>
+
+             <!-- Menggunakan innerHTML -->
+             <p id="nama-id"></p>
         </div>
     
+        <!-- Tombol manual untuk menampilkan pesan lagi -->
+        <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+    
+        <h3>Halaman lain</h3>
+        <a href="https://library.usu.ac.id/" target="_blank" rel="noopener noreferrer">
+            Perpustakaan USU - Sumber Ilmu dan Inspirasi
+        </a>
+        <button id="toggle-mode">Mode Gelap</button>
+    
+        <!-- JavaScript -->
+        <script>
+            // Fungsi untuk menampilkan pesan Selamat Datang
+            function showWelcomeMessage() {
+                alert("Selamat datang di website Bambang Sugiarto!");
+            }
+
+            // Menambahkan teks ke dalam elemen dengan id="nama-id"
+            document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
+
+            // Menampilkan log di Console
+            console.log("Hallo, ini websitenya Bambang Sugiarto.");
+        </script>
+
         <!-- Tombol untuk jQuery -->
         <button id="change-text">Klik untuk mengubah teks</button>
-        <button id="hide-text">Sembunyikan Paragraf</button>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Fungsi untuk menampilkan pesan Selamat Datang
-        function showWelcomeMessage() {
-            alert("Selamat datang di website Bambang Sugiarto!");
-        }
-    </script>
-
-    <!-- jQuery untuk mengubah teks -->
+    <!-- JavaScript jQuery -->
     <script>
         $(document).ready(function() {
             $("#change-text").click(function() {
@@ -88,24 +84,12 @@
         });
     </script>
 
-    <!-- jQuery untuk menyembunyikan paragraf -->
-    <script>
-        $(document).ready(function() {
-            $("#hide-text").click(function() {
-                $("p").hide();
-            });
-        });
-    </script>
-
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
     </footer>
-
-     <!-- Elemen Animasi HALLO -->
-     <div class="hallo-container">
-        <div class="hallo">HALLO</div>
-    </div>
     
+    <script src="script.js"></script>
+
 </body>
 </html>
