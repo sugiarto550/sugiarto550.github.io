@@ -18,6 +18,22 @@
             width: 100%;
         }
     </style>
+    
+    <script>
+        $(document).ready(function() {
+            $("#change-text").click(function() {
+                $("#intro").text("Teks telah diubah menggunakan jQuery!");
+            });
+
+            $(".show").click(function() {
+                $("p#toggle-text").show("slow");
+            });
+
+            $(".hide").click(function() {
+                $("p#toggle-text").fadeOut("slow");
+            });
+        });
+    </script>
 </head>
 <body onload="showWelcomeMessage()">
 
@@ -46,17 +62,13 @@
 
             <!-- Menggunakan jQuery -->
             <button id="change-text">Klik untuk mengubah teks</button>
+
+            <h2>Efek Show & Hide dengan jQuery</h2>
+            <button class="show">Show</button>
+            <button class="hide">Hide</button>
+            <p id="toggle-text">Ini adalah paragraf yang akan ditampilkan atau disembunyikan.</p>
         </div>
     </div>
-
-    <!-- JavaScript -->
-    <script>
-        $(document).ready(function() {
-            $("#change-text").click(function() {
-                $("#intro").text("Teks telah diubah menggunakan jQuery!");
-            });
-        });
-    </script>
 
     <!-- Footer -->
     <footer>
