@@ -17,6 +17,17 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Menjaga agar teks tidak tersembunyi */
+        .main-content h1, .main-content h2, .main-content h3 {
+            display: block !important;
+            visibility: visible !important;
+        }
+
+        /* Menyesuaikan padding bawah agar footer tidak menutupi konten */
+        .container {
+            padding-bottom: 80px;
+        }
     </style>
 </head>
 <body onload="showWelcomeMessage()">
@@ -27,7 +38,6 @@
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
         <a href="blog.html">Blog</a>
-        <a href="latihan-jql.html">latihan latihan-jql</a>
         <a href="script.js">JavaScript</a>
     </div>
 
@@ -59,7 +69,7 @@
     <!-- Tombol untuk menampilkan dan menyembunyikan paragraf -->
     <button class="show">Show</button>
     <button class="hide">Hide</button>
-    <p>Ini adalah paragraf yang akan ditampilkan atau disembunyikan.</p>
+    <p class="toggle-paragraph">Ini adalah paragraf yang akan ditampilkan atau disembunyikan.</p>
 
     <!-- JavaScript -->
     <script>
@@ -82,10 +92,10 @@
             
             // jQuery untuk menampilkan dan menyembunyikan paragraf
             $(".show").click(function() {
-                $("p").show("slow");
+                $(".toggle-paragraph").show("slow");
             });
             $(".hide").click(function() {
-                $("p").fadeOut("slow");
+                $(".toggle-paragraph").fadeOut("slow");
             });
         });
     </script>
