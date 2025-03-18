@@ -18,39 +18,30 @@
             width: 100%;
         }
 
-        /* Styling untuk animasi box */
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: #3498db;
-            position: relative;
-            animation: moveBox 2s infinite alternate;
+        /* Styling untuk animasi HALLO */
+        body {
+            background-color: #87CEEB;
         }
-        @keyframes moveBox {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(200px);
-            }
+        .hallo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
         }
-
-        /* Styling untuk animasi karakter */
-        .character {
-            width: 100px;
-            height: 100px;
-            background-image: url('https://i.imgur.com/OJofF2V.png'); /* Ganti dengan URL gambar karakter */
-            background-size: cover;
-            position: absolute;
-            bottom: 50px;
-            animation: walk 5s linear infinite;
+        .hallo {
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            transform-style: preserve-3d;
+            animation: rotate 3s infinite linear;
         }
-        @keyframes walk {
-            from {
-                left: -100px;
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0deg);
             }
-            to {
-                left: 100vw;
+            100% {
+                transform: rotateY(360deg);
             }
         }
     </style>
@@ -72,13 +63,13 @@
             <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
             <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
             <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
-            
             <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi.</p>
         </div>
     
-        <!-- Elemen Animasi -->
-        <div class="box"></div>
-        <div class="character"></div>
+        <!-- Elemen Animasi HALLO -->
+        <div class="hallo-container">
+            <div class="hallo">HALLO</div>
+        </div>
     
         <!-- Tombol untuk jQuery -->
         <button id="change-text">Klik untuk mengubah teks</button>
@@ -115,6 +106,5 @@
     <footer>
         <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
     </footer>
-
 </body>
 </html>
