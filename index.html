@@ -1,237 +1,123 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bambang Sugiarto</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Tri Anita Nurcahaya Pasaribu</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.write("<b>Selamat Datang</b>");
+    </script>
     <style>
-        /* Styling untuk tampilan cerah */
         body {
-            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #e4076e;
             overflow: hidden;
-            background-color: #f9f9f9;
-            color: black;
-            font-family: Arial, sans-serif;
+            position: relative;
+            transition: background 0.5s, color 0.5s;
         }
-
-        /* Navbar */
-        .navbar {
-            background: #00a8ff;
-            padding: 15px;
-            text-align: center;
-        }
-        .navbar a {
+        .dark-mode {
+            background-color: #222;
             color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
         }
-
-        /* Container untuk konten utama */
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Tombol */
-        .welcome-button, #change-text {
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #00a8ff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #00a8ff;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Animasi bola */
         .ball {
             width: 50px;
             height: 50px;
-            background-color: #ff4757;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg') no-repeat center/cover;
             border-radius: 50%;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        }
+        .navbar {
+            background: #333;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            text-align: right;
+        }
+        .navbar a {
+            color: rgb(152, 10, 165);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #toggle-mode {
+            background: #222;
+            color: white;
         }
     </style>
 </head>
-<body onload="showWelcomeMessage()">
+<body onload="welcomeMessage()">
 
-    <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
-        <a href="about.html">Tentang Saya</a>
-        <a href="contact-us.html">Hubungi</a>
-        <a href="blog.html">Blog</a>
+        <a href="about.html">About Me</a>
+        <a href="contact-us.html">Contact Us</a>
     </div>
 
-    <!-- Konten utama -->
-    <div class="container">
-        <div class="main-content">
-            <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
-            <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-            <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
-            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
+    <div class="ball" id="movingBall"></div>
 
-            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan!
-            </p>
+    <div class="main-content">
+        <h1>Selamat Datang di Website Perpustakaan Tri Anita Cahaya Pasaribu</h1> 
+        <h2>Temukan Keajaiban dalam Setiap Halaman Buku</h2>
+        <h3>Sumber Pengetahuan, Wawasan, dan Inspirasi </h3>
+        <p> Perpustakaan ini bukan sekadar tempat menyimpan buku, tetapi juga gerbang menuju dunia yang penuh dengan ilmu, cerita, dan gagasan besar...</p>
+    </div>
 
-            <!-- Menampilkan teks dinamis -->
-            <p id="nama-id"></p>
+    <button id="toggle-mode">Mode Gelap</button>
 
-            <!-- Tombol interaksi -->
-            <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-            <button id="change-text">Klik untuk mengubah teks</button>
-        </div>
-    
-        <section id="home">
-            <h3>Halaman lain</h3>
-            <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.</p>
-        </section>
+    <h3>Halaman lain</h3>
+    <a href="https://lib.ub.ac.id/id/" target="_blank" rel="noopener noreferrer">
+        Perpustakaan UB - "maju-maju jaya"
+    </a>
 
-        <section id="collection">
-            <h2><center>Koleksi Perpustakaan Bambang Sugiarto</center></h2>
-            <p><center><input type="text" id="search" placeholder="Cari buku..." onkeyup="searchBook()"></center></p>
-            
-                <!-- Buku 1 -->
-                <div class="book">
-                    <img src="https://images.app.goo.gl/j2NEachkAdZwaYwbA" alt="Cover Buku 1">
-                    <div class="book-info">
-                        <div class="book-title">Dasar-Dasar Layanan Perpsutakaan</div>
-                        <div class="book-author">Bambang Sugiartp,dkk</div>
-                        <div class="book-desc">Buku " Dasar-Dasar Layanan Perpustakaan " menggali aspek-aspek kunci dari pengelolaan perpustakaan modern, mengulas mulai dari prinsip dasar hingga inovasi layanan yang terus berkembang. Ditujukan bagi para profesional perpustakaan, mahasiswa ilmu perpustakaan, serta pihak yang berkepentingan dengan pengembangan perpustakaan, buku ini menawarkan perspektif mendalam mengenai operasional dan strategi dalam perpustakaan.
-                            Bab pertama buku ini membahas tren evolusi perpustakaan dan profesi terkait dalam konteks Industri 5.0, termasuk bagaimana pendidikan Perpustakaan dan Sains Informasi (PPSI) harus menyesuaikan diri dan merancang strategi untuk memasuki era industri ini. Penjelasan tentang pemanfaatan AI untuk meningkatkan layanan perpustakaan menyoroti manfaat dan tantangan pengembangannya.
-                            Bab kedua memperkenalkan konsep dan hakekat dari perpustakaan, meliputi penggolongan jenis perpustakaan dan menjelaskan tujuan serta fungsi dasar yang menunjang keberadaan dan pertumbuhannya. Segmen ini juga menekankan pentingnya layanan yang efektif sebagai inti dari operasional perpustakaan.
-                            Bab ketiga lebih lanjut mendalami konsep dan hakekat dasar layanan perpustakaan, dengan membahas faktor-faktor internal dan eksternal yang mempengaruhi kualitas layanan. Bab ini juga menguraikan berbagai aspek dan unsur yang harus diperhatikan dalam penyelenggaraan layanan perpustakaan yang efisien.
-                            Bab keempat menggambarkan secara rinci sistem dan jenis-jenis layanan yang tersedia di perpustakaan, mulai dari layanan terbuka hingga layanan digital, serta menyoroti pentingnya kualitas pelayanan dalam mencapai kepuasan pengguna.
-                            Bab kelima memberikan panduan tentang peraturan dan tata tertib yang mengatur operasional perpustakaan, mulai dari aturan umum fasilitas hingga peraturan khusus untuk layanan tertentu seperti perpustakaan digital dan sanksi bagi pelanggaran.
-                            Bab terakhir mengulas perkembangan layanan perpustakaan, tantangan yang dihadapi di era digital, dan berbagai inovasi yang telah diimplementasikan untuk memenuhi kebutuhan pengguna yang terus berkembang. Buku ini menutup dengan memperkenalkan penggunaan teknologi terkini yang telah dan dapat diintegrasikan ke dalam layanan perpustakaan untuk meningkatkan aksesibilitas dan efisiensi.
-                            Dengan mengambil pendekatan yang terstruktur dan berbasis evidensi, buku ini tidak hanya memberikan panduan praktis tetapi juga memberikan wawasan tentang bagaimana perpustakaan dapat terus berevolusi dan beradaptasi dalam melayani masyarakat di masa depan. Selain itu, referensi luas yang disediakan menjadikan buku ini sumber daya yang berharga untuk penelitian lebih lanjut dan aplikasi praktis dalam pengelolaan perpustakaan.</div>
-                        <a href="https://repository.penerbiteureka.com/media/publications/569201-dasar-dasar-layanan-perpustakaan-68c36bca.pdf" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-                </div>
-            
-                <!-- Buku 2 -->
-                <div class="book">
-                    <img src="https://i.pinimg.com/736x/6b/3a/01/6b3a010fb037d130bd5e13df3c1ba18b.jpg" alt="Cover Buku 2">
-                    <div class="book-info">
-                        <div class="book-title">Filosofi Teras</div>
-                        <div class="book-author">Henry Manampiring</div>
-                        <div class="book-desc">Dalam Filosofi Teras, Henry Manampiring memperkenalkan filsafat Stoisisme, ajaran bijak dari zaman Yunani-Romawi yang masih relevan untuk kehidupan saat ini.
-                            Stoisisme mengajarkan kita untuk fokus pada hal-hal yang bisa kita kendalikan dan menerima dengan tenang apa yang berada di luar kendali kita. Dengan prinsip-prinsip seperti dikotomi kendali, latihan mental, dan perspektif terhadap kebahagiaan, buku ini membantu pembaca menghadapi tantangan hidup dengan lebih rasional dan tenang.
-                            Ditulis dengan gaya ringan dan disertai contoh kehidupan sehari-hari, Filosofi Teras cocok bagi siapa saja yang ingin menjalani hidup dengan lebih damai, bebas dari kecemasan berlebihan, dan lebih fokus pada hal-hal yang benar-benar penting.</div>
-                        <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-                </div>
-    
-                <!-- Buku 3 -->
-                <div class="book">
-                    <img src="https://i.pinimg.com/1200x/fe/ea/b7/feeab7b37152f25ecf2d8b0effb69f28.jpg" alt="Cover Buku 3">
-                    <div class="book-info">
-                        <div class="book-title">Sejarah Dunia yang Disembunyikan</div>
-                        <div class="book-author">Jonathan Black</div>
-                        <div class="book-desc">Apa yang sebenarnya terjadi di balik peristiwa-peristiwa besar dalam sejarah dunia? Dalam Sejarah Dunia yang Disembunyikan, Jonathan Black mengajak pembaca melihat sejarah dari perspektif yang berbeda, mengungkap berbagai teori alternatif tentang asal-usul peradaban, peran organisasi rahasia, serta pengaruh mistisisme dan esoterisme dalam perjalanan umat manusia.
-                            Buku ini mengeksplorasi bagaimana kelompok-kelompok seperti Freemason, Illuminati, dan aliran-aliran spiritual tertentu diyakini memiliki pengaruh besar terhadap politik, sains, dan budaya dunia. 
-                            Dengan pendekatan yang memadukan sejarah, filsafat, dan teori konspirasi, Jonathan Black menyajikan narasi yang menggugah rasa ingin tahu dan mendorong pembaca untuk mempertanyakan apa yang selama ini dianggap sebagai kebenaran sejarah.</div>
-                        <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-                </div>
-            
-                <!-- Buku 4 -->
-                <div class="book">
-                    <img src="https://i.pinimg.com/736x/9a/bb/61/9abb61fcf68afd124375a82dfd02ca6a.jpg" alt="Cover Buku 4">
-                    <div class="book-info">
-                        <div class="book-title">Laut Bercerita</div>
-                        <div class="book-author">Leila S. Chudori</div>
-                        <div class="book-desc">Di era rezim Orde Baru, di tengah penindasan dan ketakutan, Laut Bercerita mengisahkan perjuangan, persahabatan, dan kehilangan melalui sudut pandang Biru Laut, seorang aktivis mahasiswa yang berjuang melawan ketidakadilan di Indonesia tahun 1990-an. Bersama kawan-kawannya, Laut terlibat dalam gerakan bawah tanah yang memperjuangkan kebebasan berbicara dan hak asasi manusia. 
-                            Namun, idealismenya harus dibayar mahal ketika ia diculik dan mengalami penyiksaan brutal oleh aparat negara.</div>
-                        <a href="https://drive.google.com/file/d/1d337qR1BBp2b8oGhb1C9ft7Fn6madrJs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-                </div>
-    
-                <!-- Buku 5 -->
-                <div class="book">
-                    <img src="https://i.pinimg.com/736x/e2/1b/43/e21b43796903145c4ed9527f1ebb3f4a.jpg" alt="Cover Buku 5">
-                    <div class="book-info">
-                        <div class="book-title">Pulang</div>
-                        <div class="book-author">Leila S. Chudori</div>
-                        <div class="book-desc">Buku Pulang karya Leila S. Chudori mengisahkan tentang para eksil politik Indonesia yang terpaksa hidup di pengasingan akibat peristiwa G30S 1965. Novel ini berpusat pada Dimas Suryo, seorang jurnalis yang harus meninggalkan tanah airnya setelah rezim Orde Baru berkuasa. 
-                            Bersama rekan-rekannya, ia terdampar di Paris dan berusaha membangun kehidupan baru, meski dihantui rasa rindu akan Indonesia yang tak bisa ia kunjungi.
-                            Di sisi lain, cerita juga mengikuti perjalanan Lintang Utara, putri Dimas, yang tumbuh besar di Prancis dan berusaha memahami akar sejarah keluarganya. 
-                            Ketika ia mendapatkan kesempatan untuk kembali ke Indonesia, ia dihadapkan pada kenyataan yang kompleks tentang negara yang ayahnya tinggalkan dan sejarah yang selama ini disembunyikan.</div>
-                        <a href="https://drive.google.com/file/d/1e3xSFjFrsF8VWaFaRRqdTKC1Jn5zpYzs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-                </div></section>
-    
-    <!-- Bola animasi -->
-    <div class="ball" id="ball"></div>
-
-    <!-- JavaScript -->
     <script>
-        // Fungsi untuk menampilkan pesan Selamat Datang
-        function showWelcomeMessage() {
-            alert("Selamat datang di website Bambang Sugiarto!");
-        }
-
-        // Menambahkan teks ke dalam elemen dengan id="nama-id"
-        document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
-
-        // Menampilkan log di Console
-        console.log("Hallo, ini websitenya Bambang Sugiarto.");
-
-        // jQuery untuk mengubah teks
-        $(document).ready(function() {
-            $("#change-text").click(function() {
-                $("#intro").text("Teks telah diubah menggunakan jQuery!");
-            });
+        // Mode Gelap
+        document.getElementById("toggle-mode").addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
         });
 
-        // Animasi bola memantul
-        const ball = document.getElementById("ball");
-        let x = 100, y = 100;
-        let dx = 3, dy = 3;
-        const ballSize = 50;
+        // Pesan selamat datang otomatis
+        function welcomeMessage() {
+            alert("Halo, Selamat Datang di Website Saya!");
+        }
 
-        function animate() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
+        // Bola Bergerak
+        let ball = document.getElementById("movingBall");
+        let dx = 4;
+        let dy = 4;
+        let x = Math.random() * (window.innerWidth - 50);
+        let y = Math.random() * (window.innerHeight - 50);
 
-            if (x + ballSize >= width || x <= 0) {
-                dx = -dx;
-            }
-            if (y + ballSize >= height || y <= 0) {
-                dy = -dy;
-            }
-
+        function moveBall() {
             x += dx;
             y += dy;
             
-            ball.style.left = x + "px";
-            ball.style.top = y + "px";
-
-            requestAnimationFrame(animate);
+            if (x + 50 > window.innerWidth || x < 0) {
+                dx *= -1;
+            }
+            if (y + 50 > window.innerHeight || y < 0) {
+                dy *= -1;
+            }
+            
+            ball.style.transform = `translate(${x}px, ${y}px)`;
         }
-
-        animate();
+        setInterval(moveBall, 20);
     </script>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
+        <p>&copy; 2025 Perpustakaan Tri Anita Nurcahaya Pasaribu</p>
     </footer>
 
 </body>
