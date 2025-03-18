@@ -10,27 +10,20 @@
         body {
             margin: 0;
             overflow: hidden;
-            background-color: #282c34;
             font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background-color: #444;
-            padding: 10px;
+            background-color: #282c34;
+            color: white;
             text-align: center;
         }
-        .navbar a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.575);
             position: relative;
             z-index: 2;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
         .ball {
             width: 50px;
@@ -41,6 +34,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .navbar {
+            background-color: #e2b00d;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+        }
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
         }
         footer {
             background-color: #e2b00d;
@@ -50,6 +58,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            z-index: 3;
         }
     </style>
 </head>
@@ -60,16 +69,20 @@
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
         <a href="blog.html">Blog</a>
-        <a href="latihan-jql.html">Latihan JQL</a>
-    </div>
-
-    <div class="container">
-        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
-        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Selamat menjelajah!</p>
-        <button id="change-text">Klik untuk Ubah Teks</button>
     </div>
 
     <div class="ball" id="ball"></div>
+    
+    <div class="container">
+        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
+        <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
+        <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
+        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
+        
+        <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+        <button id="change-text">Klik untuk mengubah teks</button>
+        <button id="toggle-mode">Mode Gelap</button>
+    </div>
 
     <footer>
         <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
@@ -80,10 +93,8 @@
             alert("Selamat datang di website Bambang Sugiarto!");
         }
 
-        $(document).ready(function() {
-            $("#change-text").click(function() {
-                $("#intro").text("Teks telah diubah menggunakan jQuery!");
-            });
+        document.getElementById("change-text").addEventListener("click", function() {
+            document.getElementById("intro").textContent = "Teks telah diubah menggunakan JavaScript!";
         });
 
         const ball = document.getElementById("ball");
@@ -110,7 +121,9 @@
 
             requestAnimationFrame(animate);
         }
+
         animate();
     </script>
+
 </body>
 </html>
