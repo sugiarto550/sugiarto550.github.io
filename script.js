@@ -31,11 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let greetingText = "";
         let hour = new Date().getHours();
         if (hour < 12) {
-            greetingText = "Selamat Pagi, Selamat Datang di Perpustakaan Sarah Nurul Azima!";
+            greetingText = "Selamat Pagi, Selamat Datang di Website Perpustakaan Bambang Sugiarto!";
         } else if (hour < 18) {
-            greetingText = "Selamat Siang, Selamat Datang di Perpustakaan Sarah Nurul Azima!";
+            greetingText = "Selamat Siang, Selamat Datang di Website Bambang Sugiarto!";
         } else {
-            greetingText = "Selamat Malam, Selamat Datang di Perpustakaan Sarah Nurul Azima!";
+            greetingText = "Selamat Malam, Selamat Datang di Website Perpustakaan Bambang Sugiarto!";
         }
         document.getElementById("greeting").innerText = greetingText;
     }
