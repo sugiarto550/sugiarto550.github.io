@@ -35,17 +35,12 @@
             <h1>Selamat Datang di Website Bambang Sugiarto!</h1> 
             <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
             <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
-            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
+            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
             
-            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! 
-            </p>
-
-             <!-- Menggunakan innerHTML -->
-             <p id="nama-id"></p>
+            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi.</p>
+            
+            <!-- Menggunakan innerHTML -->
+            <p id="nama-id"></p>
         </div>
     
         <!-- Tombol manual untuk menampilkan pesan lagi -->
@@ -56,29 +51,40 @@
             Perpustakaan USU - Sumber Ilmu dan Inspirasi
         </a>
     
-        <!-- JavaScript -->
-        <script>
-            // Fungsi untuk menampilkan pesan Selamat Datang
-            function showWelcomeMessage() {
-                alert("Selamat datang di website Bambang Sugiarto!");
-            }
-
-            // Menambahkan teks ke dalam elemen dengan id="nama-id"
-            document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
-
-            // Menampilkan log di Console
-            console.log("Hallo, ini websitenya Bambang Sugiarto.");
-        </script>
-
         <!-- Tombol untuk jQuery -->
         <button id="change-text">Klik untuk mengubah teks</button>
     </div>
 
-    <!-- JavaScript jQuery -->
+    <!-- Tombol untuk menampilkan dan menyembunyikan paragraf -->
+    <button class="show">Show</button>
+    <button class="hide">Hide</button>
+    <p>Ini adalah paragraf yang akan ditampilkan atau disembunyikan.</p>
+
+    <!-- JavaScript -->
     <script>
+        // Fungsi untuk menampilkan pesan Selamat Datang
+        function showWelcomeMessage() {
+            alert("Selamat datang di website Bambang Sugiarto!");
+        }
+
+        // Menambahkan teks ke dalam elemen dengan id="nama-id"
+        document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
+
+        // Menampilkan log di Console
+        console.log("Hallo, ini websitenya Bambang Sugiarto.");
+    
+        // jQuery untuk mengubah teks
         $(document).ready(function() {
             $("#change-text").click(function() {
                 $("#intro").text("Teks telah diubah menggunakan jQuery!");
+            });
+            
+            // jQuery untuk menampilkan dan menyembunyikan paragraf
+            $(".show").click(function() {
+                $("p").show("slow");
+            });
+            $(".hide").click(function() {
+                $("p").fadeOut("slow");
             });
         });
     </script>
