@@ -46,7 +46,6 @@
 
              <!-- Menggunakan innerHTML -->
              <p id="nama-id"></p>
-            </div>
         </div>
     
         <!-- Tombol manual untuk menampilkan pesan lagi -->
@@ -59,27 +58,23 @@
     
         <!-- JavaScript -->
         <script>
-            // Menggunakan window.alert()
+            // Fungsi untuk menampilkan pesan Selamat Datang
             function showWelcomeMessage() {
                 alert("Selamat datang di website Bambang Sugiarto!");
             }
-    
-            // Menggunakan document.write()
-            document.write("<p>Halo, ini ditampilkan di halaman website Bambang Sugiarto</p>");
-    
-            // Menggunakan innerHTML
-            document.getElementById("Bambang Sugiarto").innerHTML = "Hallo, ini ditampilkan di halaman wesbite Bambang Sugiarto";
-    
-            // Menggunakan console.log()
-            console.log("Hallo, ini websitenya bambang sugiarto.");
+
+            // Menambahkan teks ke dalam elemen dengan id="nama-id"
+            document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
+
+            // Menampilkan log di Console
+            console.log("Hallo, ini websitenya Bambang Sugiarto.");
         </script>
-    
-            <!-- Menggunakan jQuery -->
-            <button id="change-text">Klik untuk mengubah teks</button>
-        </div>
+
+        <!-- Tombol untuk jQuery -->
+        <button id="change-text">Klik untuk mengubah teks</button>
     </div>
 
-    <!-- JavaScript -->
+    <!-- JavaScript jQuery -->
     <script>
         $(document).ready(function() {
             $("#change-text").click(function() {
