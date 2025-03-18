@@ -155,7 +155,32 @@
                     <a href="https://drive.google.com/file/d/4abcdefghi/view?usp=drivesdk" class="read-button" target="_blank">Baca Sekarang</a>
                 </div>
             </div>
-        </section>        
+        </section>     
+        
+        <script>
+            function searchBook() {
+                let input = document.getElementById("search").value.toLowerCase();
+                let books = document.querySelectorAll(".book");
+                books.forEach(book => {
+                    let title = book.getAttribute("data-title").toLowerCase();
+                    if (title.includes(input)) {
+                        book.style.display = "block";
+                    } else {
+                        book.style.display = "none";
+                    }
+                });
+            }
+        </script>
+    
+        <div class="last-edited">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png" alt="Clock Icon">
+            <span id="last-edited"></span>
+        </div>
+        
+        <script>// Menampilkan waktu terakhir kali halaman dimuat dengan ikon berputar
+        document.getElementById("last-edited").textContent = "Terakhir Diedit: " + new Date().toLocaleString("id-ID");
+        </script>
+    
     
     <!-- Bola animasi -->
     <div class="ball" id="ball"></div>
