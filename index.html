@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bambang Sugiarto</title>
+    <title>Bambang Sugiarto - 3D Character Animation</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <style>
-        /* Styling untuk footer */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .container {
+            padding: 20px;
+        }
+        model-viewer {
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            margin: 20px auto;
+            display: block;
+        }
         footer {
-            background-color: #e2b00d; /* Warna kuning emas */
+            background-color: #e2b00d;
             color: white;
             text-align: center;
             padding: 15px 0;
@@ -17,99 +44,46 @@
             bottom: 0;
             width: 100%;
         }
-        
-        /* Styling untuk animasi lampu */
-        .lamp-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
-        }
-        .lamp {
-            width: 100px;
-            height: 150px;
-            background-image: url('https://i.imgur.com/3m1CzX7.png'); /* Ganti dengan URL gambar lampu */
-            background-size: cover;
-            animation: spin 3s infinite linear;
-        }
-        .hallo {
-            font-size: 50px;
-            font-weight: bold;
-            color: yellow;
-            text-shadow: 2px 2px 5px black;
-            margin-top: 20px;
-            animation: glow 1.5s infinite alternate;
-        }
-        @keyframes spin {
-            0% {
-                transform: rotateY(0deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
-        }
-        @keyframes glow {
-            0% {
-                text-shadow: 2px 2px 5px black;
-            }
-            100% {
-                text-shadow: 0 0 20px yellow;
-            }
-        }
     </style>
 </head>
 <body onload="showWelcomeMessage()">
-
+    
     <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
         <a href="blog.html">Blog</a>
-        <a href="latihan-jql.html">latihan-jql</a>
+        <a href="latihan-jql.html">Latihan JQL</a>
     </div>
 
     <div class="container">
-        <div class="main-content">
-            <h1>Selamat Datang di Website Bambang Sugiarto!</h1> 
-            <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-            <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
-            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
-        </div>
-    
-        <!-- Animasi Lampu -->
-        <div class="lamp-container">
-            <div class="lamp"></div>
-            <div class="hallo">HALLO</div>
-        </div>
-    
-        <!-- Tombol manual untuk menampilkan pesan lagi -->
+        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
+        <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
+        <p id="intro">Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
+        
+        <!-- Model 3D Karakter -->
+        <model-viewer id="viewer" src="character.glb" alt="3D Character" auto-rotate camera-controls animation-name="*" shadow-intensity="1"></model-viewer>
+        
         <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-    
-        <!-- JavaScript -->
-        <script>
-            function showWelcomeMessage() {
-                alert("Selamat datang di website Bambang Sugiarto!");
-            }
-            document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
-            console.log("Hallo, ini websitenya Bambang Sugiarto.");
-        </script>
-    
-        <!-- JavaScript jQuery -->
-        <script>
-            $(document).ready(function() {
-                $("#change-text").click(function() {
-                    $("#intro").text("Teks telah diubah menggunakan jQuery!");
-                });
-            });
-        </script>
     </div>
-
+    
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        function showWelcomeMessage() {
+            alert("Selamat datang di website Bambang Sugiarto!");
+        }
+
+        $(document).ready(function() {
+            $("#change-text").click(function() {
+                $("#intro").text("Teks telah diubah menggunakan jQuery!");
+            });
+        });
+    </script>
 </body>
 </html>
