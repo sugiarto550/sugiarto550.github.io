@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bambang Sugiarto</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <style>
         /* Styling untuk footer */
         footer {
@@ -34,7 +35,7 @@
             <h1>Selamat Datang di Website Bambang Sugiarto!</h1> 
             <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
             <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
-            <p>Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
+            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
             
             <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
                 Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
@@ -43,44 +44,19 @@
                 Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! 
             </p>
 
-            <!-- Menggunakan innerHTML -->
-            <p id="nama-id"></p>
+            <!-- Menggunakan jQuery -->
+            <button id="change-text">Klik untuk mengubah teks</button>
         </div>
     </div>
 
-    <!-- Tombol manual untuk menampilkan pesan lagi -->
-    <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-
-    <h3>Halaman lain</h3>
-    <a href="https://library.usu.ac.id/" target="_blank" rel="noopener noreferrer">
-        Perpustakaan USU - Sumber Ilmu dan Inspirasi
-    </a>
-
     <!-- JavaScript -->
     <script>
-        // Menggunakan window.alert()
-        function showWelcomeMessage() {
-            alert("Selamat datang di website Bambang Sugiarto!");
-        }
-
-        // Menggunakan document.write()
-        document.write("<p>Halo, ini ditampilkan di halaman website Bambang Sugiarto</p>");
-
-        // Menggunakan innerHTML
-        document.getElementById("Bambang Sugiarto").innerHTML = "Hallo, ini ditampilkan di halaman wesbite Bambang Sugiarto";
-
-        // Menggunakan console.log()
-        console.log("Hallo, ini websitenya bambang sugiarto.");
+        $(document).ready(function() {
+            $("#change-text").click(function() {
+                $("#intro").text("Teks telah diubah menggunakan jQuery!");
+            });
+        });
     </script>
-
-<script>
-    var x = 5;
-    if (x < 2) {
-        document.write(x + " < 2");
-    } else {
-        document.write(x + " > 2");
-    }
-</script>
 
     <!-- Footer -->
     <footer>
