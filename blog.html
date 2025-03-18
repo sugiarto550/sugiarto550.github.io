@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Blog - Bambang Sugiarto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             padding: 20px;
             background-color: #5e0909;
+            color: white;
         }
         .container {
             max-width: 800px;
@@ -19,21 +22,76 @@
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(12, 41, 201, 0.575);
         }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        model-viewer {
+            width: 100%;
+            height: 60vh;
+            display: block;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
+
     <div class="navbar">
         <a href="index.html">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
-        <a href="blog.html">blog</a>
-
+        <a href="blog.html">Blog</a>
     </div>
+
     <div class="container">
         <h2>About Me</h2>
         <p>Halo! Saya Bambang Sugiarto, seorang pembelajar yang terus berkembang. Ini adalah <i>Homepage</i> pertama saya, tempat saya bereksperimen dan mengeksplorasi dunia digital.</p>
         <h3>Semangat belajar adalah kunci menuju masa depan yang lebih baik!</h3>
     </div>
+
+    <!-- Animasi Buku 3D -->
+    <div class="container">
+        <h2>3D Book Animation</h2>
+        <model-viewer id="viewer" src="book.glb" alt="3D Book" auto-rotate camera-controls animation-name="*" shadow-intensity="1"></model-viewer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modelViewer = document.getElementById("viewer");
+            let isFlipping = false;
+            
+            function flipAnimation() {
+                if (isFlipping) return;
+                isFlipping = true;
+                let angle = 0;
+                let direction = 1;
+                
+                const interval = setInterval(() => {
+                    angle += direction * 5;
+                    modelViewer.setAttribute("camera-orbit", `${angle}deg 75deg auto`);
+                    
+                    if (angle >= 180) direction = -1;
+                    if (angle <= 0) {
+                        clearInterval(interval);
+                        isFlipping = false;
+                    }
+                }, 50);
+            }
+            
+            document.body.addEventListener("click", flipAnimation);
+        });
+    </script>
 
 </body>
 </html>

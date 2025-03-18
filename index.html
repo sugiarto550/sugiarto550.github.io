@@ -1,49 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bambang Sugiarto - 3D Animation</title>
+    <title>Bambang Sugiarto</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer"></script>
     <style>
-        body {
-            margin: 0;
-            background-color: #1e1e1e;
-            color: white;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        model-viewer {
-            width: 80%;
-            height: 500px;
-            display: block;
-            margin: auto;
-        }
-        .navbar {
-            background-color: #e2b00d;
-            padding: 10px;
-        }
-        .navbar a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
-        .welcome-button, #toggle-mode {
-            margin: 10px;
-            padding: 10px;
-            background-color: #e2b00d;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
+        /* Styling untuk footer */
         footer {
-            background-color: #e2b00d;
-            padding: 15px;
+            background-color: #e2b00d; /* Warna kuning emas */
+            color: white; /* Warna teks putih agar kontras */
+            text-align: center;
+            padding: 15px 0;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -58,55 +27,69 @@
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
         <a href="blog.html">Blog</a>
+        <a href="latihan-jql.html">latihan-jql</a>
     </div>
 
     <div class="container">
-        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
-        <h2>Eksplorasi Dunia 3D!</h2>
+        <div class="main-content">
+            <h1>Selamat Datang di Website Bambang Sugiarto!</h1> 
+            <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
+            <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
+            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
+            
+            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
+                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
+                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
+                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
+                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan! 
+            </p>
 
-        <!-- Model 3D -->
-        <model-viewer id="viewer" 
-            src="character.glb" 
-            alt="3D Character" 
-            auto-rotate 
-            camera-controls 
-            animation-name="*"
-            shadow-intensity="1">
-        </model-viewer>
-
+             <!-- Menggunakan innerHTML -->
+             <p id="nama-id"></p>
+        </div>
+    
+        <!-- Tombol manual untuk menampilkan pesan lagi -->
         <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+    
+        <h3>Halaman lain</h3>
+        <a href="https://library.usu.ac.id/" target="_blank" rel="noopener noreferrer">
+            Perpustakaan USU - Sumber Ilmu dan Inspirasi
+        </a>
         <button id="toggle-mode">Mode Gelap</button>
+    
+        <!-- JavaScript -->
+        <script>
+            // Fungsi untuk menampilkan pesan Selamat Datang
+            function showWelcomeMessage() {
+                alert("Selamat datang di website Bambang Sugiarto!");
+            }
+
+            // Menambahkan teks ke dalam elemen dengan id="nama-id"
+            document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
+
+            // Menampilkan log di Console
+            console.log("Hallo, ini websitenya Bambang Sugiarto.");
+        </script>
+
+        <!-- Tombol untuk jQuery -->
+        <button id="change-text">Klik untuk mengubah teks</button>
     </div>
 
-    <!-- JavaScript -->
+    <!-- JavaScript jQuery -->
     <script>
-        function showWelcomeMessage() {
-            alert("Selamat datang di website Bambang Sugiarto!");
-        }
-
-        // Animasi Melompat
-        document.addEventListener("DOMContentLoaded", () => {
-            const modelViewer = document.getElementById("viewer");
-
-            modelViewer.addEventListener("load", () => {
-                console.log("3D Model Loaded");
+        $(document).ready(function() {
+            $("#change-text").click(function() {
+                $("#intro").text("Teks telah diubah menggunakan jQuery!");
             });
-
-            document.body.addEventListener("click", () => {
-                modelViewer.animationName = "Jump";
-            });
-        });
-
-        // Mode Gelap
-        document.getElementById("toggle-mode").addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
         });
     </script>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Bambang Sugiarto</p>
+        <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
     </footer>
+    
+    <script src="script.js"></script>
 
 </body>
 </html>
