@@ -6,14 +6,16 @@
     <title>Bambang Sugiarto</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <style>
+        /* Styling dasar */
         body {
             margin: 0;
-            overflow: hidden;
+            overflow-x: hidden;
             background-color: #e4b20d;
             color: black;
             font-family: Arial, sans-serif;
         }
 
+        /* Navbar */
         .navbar {
             background: #00a8ff;
             padding: 15px;
@@ -26,63 +28,79 @@
             font-weight: bold;
         }
 
+        /* Container utama */
         .container {
             padding: 20px;
             text-align: center;
         }
 
-        .book {
-            display: inline-block;
-            text-align: center;
-            margin: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background: white;
-            width: 200px;
-        }
-
-        .book img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .welcome-button, #change-text {
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #00a8ff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-
+        /* Footer */
         footer {
             background-color: #00a8ff;
             color: white;
             text-align: center;
             padding: 15px 0;
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
 
-        .ball {
-            width: 50px;
-            height: 50px;
-            background-color: #ff4757;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        /* Rekomendasi Buku */
+        #rekomendasi-buku {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .book {
+            display: inline-block;
+            background: white;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .book img {
+            width: 100px;
+            height: 150px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        /* Halaman Lain */
+        .main-content {
+            padding: 20px;
+            background-color: #ffdf85;
+            text-align: center;
+        }
+
+        .main-content h3 {
+            color: #333;
+        }
+
+        /* Search Bar */
+        #search-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        #searchInput {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
     </style>
 </head>
-<body onload="showWelcomeMessage()">
+<body>
 
+    <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
@@ -91,34 +109,26 @@
         <a href="koleksi.html">Koleksi</a>
     </div>
 
+    <!-- Konten utama -->
     <div class="container">
         <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
         <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
         <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
-
-        <p id="nama-id"></p>
-
-        <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-        <button id="change-text">Klik untuk mengubah teks</button>
     </div>
 
+    <!-- Halaman Lain -->
     <div class="main-content">
-            
-        <h3>Halaman lain</h3>
-        <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.</p>
-    </section>
+        <h3>Halaman Lain</h3>
+        <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di 
+            <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> 
+            untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.
+        </p>
+    </div>
 
-     <!-- Search Bar -->
-     <section id="search-section">
-        <h2>Cari Buku</h2>
-        <input type="text" id="searchInput" placeholder="Cari buku berdasarkan judul, penulis, atau kategori..." onkeyup="searchBooks()">
-    </section>
-
-    
-    
+    <!-- Bagian Rekomendasi Buku -->
     <section id="rekomendasi-buku">
         <h2>Rekomendasi Buku</h2>
-        <div class="container" id="bookList">
+        <div class="container">
             <div class="book">
                 <a href="https://drive.google.com/file/d/1X0Uh0wrrA4u1zaMVGzGLHqUmRupVvppi/view?usp=drive_link" target="_blank">
                     <img src="konsep-logika.jpg" alt="Konsep Logika">
@@ -130,54 +140,38 @@
         </div>
     </section>
 
-    <div class="ball" id="ball"></div>
+    <!-- Search Bar -->
+    <section id="search-section">
+        <h2>Cari Buku</h2>
+        <input type="text" id="searchInput" placeholder="Cari buku berdasarkan judul, penulis, atau kategori..." onkeyup="searchBooks()">
+    </section>
 
-    <script>
-        function showWelcomeMessage() {
-            alert("Selamat datang di website Bambang Sugiarto!");
-        }
-
-        document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
-
-        console.log("Hallo, ini websitenya Bambang Sugiarto.");
-
-        $(document).ready(function() {
-            $("#change-text").click(function() {
-                $("#intro").text("Teks telah diubah menggunakan jQuery!");
-            });
-        });
-
-        const ball = document.getElementById("ball");
-        let x = 100, y = 100;
-        let dx = 3, dy = 3;
-        const ballSize = 50;
-
-        function animate() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-
-            if (x + ballSize >= width || x <= 0) {
-                dx = -dx;
-            }
-            if (y + ballSize >= height || y <= 0) {
-                dy = -dy;
-            }
-
-            x += dx;
-            y += dy;
-
-            ball.style.left = x + "px";
-            ball.style.top = y + "px";
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-    </script>
-
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
     </footer>
+
+    <!-- JavaScript untuk Fungsi Pencarian -->
+    <script>
+        function searchBooks() {
+            var input, filter, bookSection, books, bookTitle, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            bookSection = document.getElementById("rekomendasi-buku");
+            books = bookSection.getElementsByClassName("book");
+
+            for (i = 0; i < books.length; i++) {
+                bookTitle = books[i].getElementsByTagName("p")[0];
+                txtValue = bookTitle.textContent || bookTitle.innerText;
+
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    books[i].style.display = "";
+                } else {
+                    books[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
