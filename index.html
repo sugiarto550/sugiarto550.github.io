@@ -6,7 +6,6 @@
     <title>Bambang Sugiarto</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <style>
-        /* Styling untuk tampilan cerah */
         body {
             margin: 0;
             overflow: hidden;
@@ -15,7 +14,6 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Navbar */
         .navbar {
             background: #00a8ff;
             padding: 15px;
@@ -28,13 +26,28 @@
             font-weight: bold;
         }
 
-        /* Container untuk konten utama */
         .container {
             padding: 20px;
             text-align: center;
         }
 
-        /* Tombol */
+        .book {
+            display: inline-block;
+            text-align: center;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: white;
+            width: 200px;
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
         .welcome-button, #change-text {
             margin-top: 10px;
             padding: 10px 15px;
@@ -46,7 +59,6 @@
             border-radius: 5px;
         }
 
-        /* Footer */
         footer {
             background-color: #00a8ff;
             color: white;
@@ -57,7 +69,6 @@
             width: 100%;
         }
 
-        /* Animasi bola */
         .ball {
             width: 50px;
             height: 50px;
@@ -72,7 +83,6 @@
 </head>
 <body onload="showWelcomeMessage()">
 
-    <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
@@ -81,67 +91,48 @@
         <a href="koleksi.html">Koleksi</a>
     </div>
 
-    <!-- Konten utama -->
     <div class="container">
-        <div class="main-content">
-            <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
-            <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-            <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
-            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
+        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
+        <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
+        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
 
-            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan!
-            </p>
-        
-            <!-- Menampilkan teks dinamis -->
-            <p id="nama-id"></p>
+        <p id="nama-id"></p>
 
-            <!-- Tombol interaksi -->
-            <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-            <button id="change-text">Klik untuk mengubah teks</button>
-        </div>
-    
-        <section id="home">
-            <h3>Halaman lain</h3>
-            <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.</p>
-        </section>
+        <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+        <button id="change-text">Klik untuk mengubah teks</button>
+    </div>
 
-        <!-- Rekomendasi Buku -->
     <section id="rekomendasi-buku">
         <h2>Rekomendasi Buku</h2>
         <div class="container" id="bookList">
-            <div class="book" data-title="Konsep Logika" data-author="Marzuki Ahmad" data-category="pelajaran">
+            <div class="book">
                 <a href="https://drive.google.com/file/d/1X0Uh0wrrA4u1zaMVGzGLHqUmRupVvppi/view?usp=drive_link" target="_blank">
-                    <img src="img src"="konsep-logika.jpg" alt="Konsep Logika" alt="Konsep Logika">
-                </a> 
+                    <img src="konsep-logika.jpg" alt="Konsep Logika">
+                </a>
+                <p><strong>Judul:</strong> Konsep Logika</p>
+                <p><strong>Penulis:</strong> Marzuki Ahmad</p>
+                <p><strong>Kategori:</strong> Pelajaran</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Bola animasi -->
     <div class="ball" id="ball"></div>
 
-    <!-- JavaScript -->
     <script>
-        // Fungsi untuk menampilkan pesan Selamat Datang
         function showWelcomeMessage() {
             alert("Selamat datang di website Bambang Sugiarto!");
         }
 
-        // Menambahkan teks ke dalam elemen dengan id="nama-id"
         document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
 
-        // Menampilkan log di Console
         console.log("Hallo, ini websitenya Bambang Sugiarto.");
 
-        // jQuery untuk mengubah teks
         $(document).ready(function() {
             $("#change-text").click(function() {
                 $("#intro").text("Teks telah diubah menggunakan jQuery!");
             });
         });
 
-        // Animasi bola memantul
         const ball = document.getElementById("ball");
         let x = 100, y = 100;
         let dx = 3, dy = 3;
@@ -160,7 +151,7 @@
 
             x += dx;
             y += dy;
-            
+
             ball.style.left = x + "px";
             ball.style.top = y + "px";
 
@@ -170,7 +161,6 @@
         animate();
     </script>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
     </footer>
