@@ -9,27 +9,23 @@
         /* Styling untuk tampilan cerah */
         body {
             margin: 0;
-            overflow-x: hidden;
+            overflow: hidden;
             background-color: #e4b20d;
             color: black;
             font-family: Arial, sans-serif;
         }
 
-        /* Navbar di pojok kanan atas */
+        /* Navbar */
         .navbar {
             background: #00a8ff;
             padding: 15px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            text-align: right;
+            text-align: center;
         }
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 10px;
             font-weight: bold;
-            display: inline-block;
         }
 
         /* Container untuk konten utama */
@@ -68,47 +64,38 @@
             background-color: #ff4757;
             border-radius: 50%;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 100px;
+            left: 100px;
         }
 
-        /* Koleksi Buku */
-        #collection {
-            text-align: center;
-            margin-top: 20px;
-        }
-
+        /* Styling untuk koleksi buku */
         .book {
-            display: inline-block;
-            width: 250px;
-            margin: 10px;
-            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin: 20px auto;
+            width: 70%;
             background: white;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-
         .book img {
-            width: 100%;
-            border-radius: 10px;
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
         }
-
-        .book-title {
-            font-size: 18px;
-            font-weight: bold;
+        .book-info {
+            flex: 1;
         }
-
         .read-button {
-            display: block;
+            display: inline-block;
             margin-top: 10px;
-            padding: 8px;
+            padding: 8px 12px;
             background: #00a8ff;
             color: white;
             text-decoration: none;
             border-radius: 5px;
         }
-
     </style>
 </head>
 <body onload="showWelcomeMessage()">
@@ -125,77 +112,94 @@
     <div class="container">
         <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
         <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
+        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Selamat menjelajah!</p>
 
         <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
         <button id="change-text">Klik untuk mengubah teks</button>
-
-        <h3>Halaman lain</h3>
-        <p>Kunjungan di <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a>.</p>
     </div>
 
-    <!-- Koleksi Perpustakaan Digital -->
+    <!-- Koleksi Perpustakaan -->
     <section id="collection">
-        <h2>Koleksi Perpustakaan Digital</h2>
-        <input type="text" id="search" placeholder="Cari buku..." onkeyup="searchBook()">
-        
+        <h2 style="text-align: center;">Koleksi Perpustakaan Digital</h2>
+        <input type="text" id="search" placeholder="Cari buku..." onkeyup="searchBook()" style="display: block; margin: 0 auto; padding: 5px;">
+
         <!-- Buku 1 -->
         <div class="book" data-title="The Psychology of Money">
-            <img src="https://i.pinimg.com/736x/4e/b7/78/4eb778b272f4ddba6c3fdd4cfe9c31bc.jpg" alt="The Psychology of Money">
-            <div class="book-title">The Psychology of Money</div>
-            <a href="#" class="read-button">Baca Sekarang</a>
+            <img src="https://i.pinimg.com/736x/4e/b7/78/4eb778b272f4ddba6c3fdd4cfe9c31bc.jpg" alt="Cover Buku 1">
+            <div class="book-info">
+                <div class="book-title">The Psychology of Money</div>
+                <div class="book-author">Morgan Housel</div>
+                <div class="book-desc">Buku ini membahas bagaimana pola pikir lebih penting daripada kecerdasan finansial.</div>
+                <a href="https://drive.google.com/file/d/1Kjd8TFl5l/view?usp=sharing" class="read-button" target="_blank">Baca Sekarang</a>
+            </div>
         </div>
 
         <!-- Buku 2 -->
         <div class="book" data-title="Atomic Habits">
-            <img src="https://i.pinimg.com/736x/2a/69/d9/2a69d9d6e78c3a3b5a741b5f8b76f0e6.jpg" alt="Atomic Habits">
-            <div class="book-title">Atomic Habits</div>
-            <a href="#" class="read-button">Baca Sekarang</a>
-        </div>
-
-        <!-- Buku 3 -->
-        <div class="book" data-title="Deep Work">
-            <img src="https://i.pinimg.com/736x/68/30/02/68300278ae6dcb0f0e3a6ccf77450b02.jpg" alt="Deep Work">
-            <div class="book-title">Deep Work</div>
-            <a href="#" class="read-button">Baca Sekarang</a>
-        </div>
-
-        <!-- Buku 4 -->
-        <div class="book" data-title="Sapiens">
-            <img src="https://i.pinimg.com/736x/92/6c/8f/926c8f1dfb8a6e51d1c2ea829b1f38c1.jpg" alt="Sapiens">
-            <div class="book-title">Sapiens</div>
-            <a href="#" class="read-button">Baca Sekarang</a>
+            <img src="https://i.pinimg.com/736x/2a/69/d9/2a69d9d6e78c3a3b5a741b5f8b76f0e6.jpg" alt="Cover Buku 2">
+            <div class="book-info">
+                <div class="book-title">Atomic Habits</div>
+                <div class="book-author">James Clear</div>
+                <div class="book-desc">James Clear menjelaskan bagaimana kebiasaan kecil dapat berdampak besar.</div>
+                <a href="https://drive.google.com/file/d/2Jk8LsD9/view?usp=sharing" class="read-button" target="_blank">Baca Sekarang</a>
+            </div>
         </div>
     </section>
 
     <!-- Bola animasi -->
     <div class="ball" id="ball"></div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
-    </footer>
-
     <!-- JavaScript -->
     <script>
+        // Menampilkan pesan Selamat Datang
         function showWelcomeMessage() {
             alert("Selamat datang di website Bambang Sugiarto!");
         }
 
-        $("#change-text").click(function() {
-            $("#intro").text("Teks telah diubah menggunakan jQuery!");
+        // Ubah teks dengan jQuery
+        $(document).ready(function() {
+            $("#change-text").click(function() {
+                $("#intro").text("Teks telah diubah menggunakan jQuery!");
+            });
         });
 
+        // Animasi bola memantul
+        const ball = document.getElementById("ball");
+        let x = 100, y = 100;
+        let dx = 3, dy = 3;
+
+        function animate() {
+            const width = window.innerWidth - 50; // 50 adalah ukuran bola
+            const height = window.innerHeight - 50;
+
+            if (x >= width || x <= 0) dx = -dx;
+            if (y >= height || y <= 0) dy = -dy;
+
+            x += dx;
+            y += dy;
+
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Fungsi pencarian buku
         function searchBook() {
             let input = document.getElementById("search").value.toLowerCase();
             let books = document.querySelectorAll(".book");
-            
             books.forEach(book => {
                 let title = book.querySelector(".book-title").textContent.toLowerCase();
                 book.style.display = title.includes(input) ? "block" : "none";
             });
         }
     </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
+    </footer>
 
 </body>
 </html>
