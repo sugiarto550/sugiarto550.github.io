@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Digital Buku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .book {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .book img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .book a {
+            display: block;
+            margin-top: 10px;
+            padding: 8px;
+            background: #00a8ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .book a:hover {
+            background: #007acc;
+        }
+    </style>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Beranda</a>
+        <a href="about.html">About Me</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="koleksi.html">Koleksi</a>
+    </div>
+    
+</head>
+<body>
+
+    <h1>Koleksi Digital Buku</h1>
+    <div class="container">
+        <div class="book">
+            <img src="https://raw.githubusercontent.com/username/repo/main/assets/book1.jpg" alt="Buku 1">
+            <h3>Judul Buku 1</h3>
+            <a href="https://raw.githubusercontent.com/username/repo/main/assets/buku1.pdf" target="_blank">Baca Buku</a>
+        </div>
+        <div class="book">
+            <img src="https://raw.githubusercontent.com/username/repo/main/assets/book2.jpg" alt="Buku 2">
+            <h3>Judul Buku 2</h3>
+            <a href="https://raw.githubusercontent.com/username/repo/main/assets/buku2.pdf" target="_blank">Baca Buku</a>
+        </div>
+    </div>
+
+</body>
+</html>

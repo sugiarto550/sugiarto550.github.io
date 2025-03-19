@@ -9,7 +9,7 @@
         /* Styling untuk tampilan cerah */
         body {
             margin: 0;
-            overflow-x: hidden;
+            overflow: hidden;
             background-color: #e4b20d;
             color: black;
             font-family: Arial, sans-serif;
@@ -68,27 +68,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
-        /* Koleksi Buku */
-        .book-section {
-            padding: 30px;
-            text-align: center;
-            background: #f4f4f4;
-        }
-
-        .book-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .book-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body onload="showWelcomeMessage()">
@@ -99,33 +78,36 @@
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
         <a href="blog.html">Blog</a>
-        <a href="#koleksi-buku">Koleksi Buku</a> <!-- Link ke bagian koleksi buku -->
+        <a href="koleksi.html">Koleksi</a>
     </div>
 
     <!-- Konten utama -->
     <div class="container">
-        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
-        <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
+        <div class="main-content">
+            <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
+            <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
+            <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
+            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
 
-        <!-- Menampilkan teks dinamis -->
-        <p id="nama-id"></p>
+            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
+                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
+                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
+                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
+                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan!
+            </p>
+        
+            <!-- Menampilkan teks dinamis -->
+            <p id="nama-id"></p>
 
-        <!-- Tombol interaksi -->
-        <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-        <button id="change-text">Klik untuk mengubah teks</button>
-    </div>
-
-    <!-- Bagian Koleksi Buku -->
-    <section id="koleksi-buku" class="book-section">
-        <h1>Koleksi Buku</h1>
-        <div class="book-container">
-            <img src="Analisa-dan-Perancangan_Eva-Argarini_-rev-1.0-depan%20(2).jpg" alt="Gambar Buku">
-            <img src="pem-web.jpg" alt="Gambar Buku">
-            <img src="Konsep-Dasar-Pemrograman-Convert-depan.jpg" alt="Gambar Buku">
-            <img src="Menguasai_Pemrograman_Arduino_Dan_Robotik.jpg" alt="Gambar Buku">
+            <!-- Tombol interaksi -->
+            <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+            <button id="change-text">Klik untuk mengubah teks</button>
         </div>
-    </section>
+    
+        <section id="home">
+            <h3>Halaman lain</h3>
+            <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.</p>
+        </section>
 
     <!-- Bola animasi -->
     <div class="ball" id="ball"></div>
@@ -137,8 +119,11 @@
             alert("Selamat datang di website Bambang Sugiarto!");
         }
 
-        // Menampilkan teks di elemen tertentu
-        document.getElementById("nama-id").innerHTML = "Hallo, ini website Bambang Sugiarto.";
+        // Menambahkan teks ke dalam elemen dengan id="nama-id"
+        document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
+
+        // Menampilkan log di Console
+        console.log("Hallo, ini websitenya Bambang Sugiarto.");
 
         // jQuery untuk mengubah teks
         $(document).ready(function() {
