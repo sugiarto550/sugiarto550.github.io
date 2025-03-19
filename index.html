@@ -1,78 +1,69 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bambang Sugiarto</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <style>
-        /* Styling untuk tampilan cerah */
         body {
             margin: 0;
             overflow: hidden;
-            background-color: #e4b20d;
-            color: black;
             font-family: Arial, sans-serif;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: #00a8ff;
-            padding: 15px;
+            background-color: #282c34;
+            color: white;
             text-align: center;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .navbar {
+            background-color: #e2b00d;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 3;
         }
         .navbar a {
-            color: white;
+            color: black;
             text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        /* Container untuk konten utama */
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Tombol */
-        .welcome-button, #change-text {
-            margin-top: 10px;
             padding: 10px 15px;
-            background: #00a8ff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
+            display: inline-block;
         }
-
-        /* Footer */
         footer {
-            background-color: #00a8ff;
+            background-color: #e2b00d;
             color: white;
             text-align: center;
             padding: 15px 0;
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-
-        /* Animasi bola */
-        .ball {
-            width: 50px;
-            height: 50px;
-            background-color: #ff4757;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            z-index: 3;
         }
     </style>
 </head>
 <body onload="showWelcomeMessage()">
 
-    <!-- Navbar -->
     <div class="navbar">
         <a href="#">Beranda</a>
         <a href="about.html">About Me</a>
@@ -80,133 +71,32 @@
         <a href="blog.html">Blog</a>
     </div>
 
-    <!-- Konten utama -->
-    <div class="container">
-        <div class="main-content">
-            <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
-            <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-            <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
-            <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini. Selamat menjelajah dan semoga menemukan sesuatu yang bermanfaat!</p>
-
-            <p>Saya percaya bahwa ilmu pengetahuan adalah jendela menuju masa depan yang lebih cerah, dan kreativitas adalah sayap yang membawa kita terbang lebih tinggi. 
-                Dalam setiap tulisan dan karya yang saya bagikan, ada semangat untuk terus belajar, berkembang, dan berbagi dengan dunia. 
-                Tak peduli seberapa kecil sebuah ide, jika dieksekusi dengan tekad, ia bisa menjadi sesuatu yang luar biasa. 
-                Saya berharap setiap pengunjung yang singgah di sini dapat menemukan inspirasi, motivasi, atau bahkan perspektif baru yang mungkin belum pernah mereka pikirkan sebelumnya. 
-                Mari kita bersama-sama menciptakan ruang yang penuh dengan pemikiran kritis, eksplorasi tanpa batas, dan impian yang menjadi kenyataan!
-            </p>
-        
-            <!-- Menampilkan teks dinamis -->
-            <p id="nama-id"></p>
-
-            <!-- Tombol interaksi -->
-            <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
-            <button id="change-text">Klik untuk mengubah teks</button>
-        </div>
-    
-        <section id="home">
-            <h3>Halaman lain</h3>
-            <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.</p>
-        </section>
-
-        <section id="collection">
-            <h2><center>Koleksi Perpustakaan Bambang Sugiarto</center></h2>
-            <p><center><input type="text" id="search" placeholder="Cari buku..." onkeyup="searchBook()"></center></p>
-            
-            <!-- Buku 1 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/4e/b7/78/4eb778b272f4ddba6c3fdd4cfe9c31bc.jpg" alt="Cover Buku 1">
-                <div class="book-info">
-                    <div class="book-title">The Psychology of Money</div>
-                    <div class="book-author">Morgan Housel</div>
-                    <div class="book-desc">Buku ini membahas bagaimana pola pikir dan kebiasaan kita dalam mengelola uang lebih penting daripada kecerdasan finansial itu sendiri. Dengan berbagai kisah nyata, Morgan Housel menjelaskan bagaimana psikologi memainkan peran besar dalam keputusan keuangan kita.</div>
-                    <a href="https://drive.google.com/file/d/1abcdefghi/view?usp=drivesdk" class="read-button" target="_blank">Baca Sekarang</a>
-                </div>
-            </div>
-            
-            <!-- Buku 2 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/2a/69/d9/2a69d9d6e78c3a3b5a741b5f8b76f0e6.jpg" alt="Cover Buku 2">
-                <div class="book-info">
-                    <div class="book-title">Atomic Habits</div>
-                    <div class="book-author">James Clear</div>
-                    <div class="book-desc">James Clear menjelaskan bagaimana kebiasaan kecil dapat berdampak besar dalam kehidupan. Dengan pendekatan berbasis ilmu psikologi dan neurosains, buku ini memberikan strategi untuk membangun kebiasaan baik dan menghilangkan kebiasaan buruk.</div>
-                    <a href="https://drive.google.com/file/d/2abcdefghi/view?usp=drivesdk" class="read-button" target="_blank">Baca Sekarang</a>
-                </div>
-            </div>
-            
-            <!-- Buku 3 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/68/30/02/68300278ae6dcb0f0e3a6ccf77450b02.jpg" alt="Cover Buku 3">
-                <div class="book-info">
-                    <div class="book-title">Deep Work</div>
-                    <div class="book-author">Cal Newport</div>
-                    <div class="book-desc">Dalam dunia yang penuh distraksi, buku ini menjelaskan pentingnya bekerja secara mendalam untuk mencapai produktivitas maksimal. Cal Newport membagikan strategi untuk fokus dan meningkatkan kualitas hasil kerja.</div>
-                    <a href="https://drive.google.com/file/d/3abcdefghi/view?usp=drivesdk" class="read-button" target="_blank">Baca Sekarang</a>
-                </div>
-            </div>
-            
-            <!-- Buku 4 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/92/6c/8f/926c8f1dfb8a6e51d1c2ea829b1f38c1.jpg" alt="Cover Buku 4">
-                <div class="book-info">
-                    <div class="book-title">Sapiens: A Brief History of Humankind</div>
-                    <div class="book-author">Yuval Noah Harari</div>
-                    <div class="book-desc">Buku ini mengupas sejarah umat manusia dari zaman purba hingga era modern. Yuval Noah Harari menjelaskan bagaimana Homo sapiens berhasil mendominasi dunia dengan kemampuan bercerita dan berkolaborasi dalam skala besar.</div>
-                    <a href="https://drive.google.com/file/d/4abcdefghi/view?usp=drivesdk" class="read-button" target="_blank">Baca Sekarang</a>
-                </div>
-            </div>
-        </section>
-        </div>     
-        
-        <script>
-            function searchBook() {
-                let input = document.getElementById("search").value.toLowerCase();
-                let books = document.querySelectorAll(".book");
-                books.forEach(book => {
-                    let title = book.getAttribute("data-title").toLowerCase();
-                    if (title.includes(input)) {
-                        book.style.display = "block";
-                    } else {
-                        book.style.display = "none";
-                    }
-                });
-            }
-        </script>
-    
-        <div class="last-edited">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png" alt="Clock Icon">
-            <span id="last-edited"></span>
-        </div>
-        
-        <script>// Menampilkan waktu terakhir kali halaman dimuat dengan ikon berputar
-        document.getElementById("last-edited").textContent = "Terakhir Diedit: " + new Date().toLocaleString("id-ID");
-        </script>
-    
-    
-    <!-- Bola animasi -->
     <div class="ball" id="ball"></div>
+    
+    <div class="container">
+        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
+        <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
+        <h3>Di sini, saya berbagi pengalaman, wawasan, dan ide-ide menarik untuk menginspirasi.</h3>
+        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
+        
+        <button class="welcome-button" onclick="showWelcomeMessage()">Klik untuk Selamat Datang</button>
+        <button id="change-text">Klik untuk mengubah teks</button>
+        <button id="toggle-mode">Mode Gelap</button>
+    </div>
 
-    <!-- JavaScript -->
+    <footer>
+        <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
+    </footer>
+
     <script>
-        // Fungsi untuk menampilkan pesan Selamat Datang
         function showWelcomeMessage() {
             alert("Selamat datang di website Bambang Sugiarto!");
         }
 
-        // Menambahkan teks ke dalam elemen dengan id="nama-id"
-        document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
-
-        // Menampilkan log di Console
-        console.log("Hallo, ini websitenya Bambang Sugiarto.");
-
-        // jQuery untuk mengubah teks
-        $(document).ready(function() {
-            $("#change-text").click(function() {
-                $("#intro").text("Teks telah diubah menggunakan jQuery!");
-            });
+        document.getElementById("change-text").addEventListener("click", function() {
+            document.getElementById("intro").textContent = "Teks telah diubah menggunakan JavaScript!";
         });
 
-        // Animasi bola memantul
         const ball = document.getElementById("ball");
         let x = 100, y = 100;
         let dx = 3, dy = 3;
@@ -234,11 +124,6 @@
 
         animate();
     </script>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
-    </footer>
 
 </body>
 </html>
