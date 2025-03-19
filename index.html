@@ -45,6 +45,18 @@
             width: 100%;
         }
 
+         /* Animasi bola */
+         .ball {
+            width: 50px;
+            height: 50px;
+            background-color: #ff4757;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         /* Rekomendasi Buku */
         #rekomendasi-buku {
             background-color: #f9f9f9;
@@ -172,6 +184,64 @@
             }
         }
     </script>
+
+<!-- Bola animasi -->
+<div class="ball" id="ball"></div>
+
+<!-- JavaScript -->
+<script>
+    // Fungsi untuk menampilkan pesan Selamat Datang
+    function showWelcomeMessage() {
+        alert("Selamat datang di website Bambang Sugiarto!");
+    }
+
+    // Menambahkan teks ke dalam elemen dengan id="nama-id"
+    document.getElementById("nama-id").innerHTML = "Hallo, ini ditampilkan di halaman website Bambang Sugiarto.";
+
+    // Menampilkan log di Console
+    console.log("Hallo, ini websitenya Bambang Sugiarto.");
+
+    // jQuery untuk mengubah teks
+    $(document).ready(function() {
+        $("#change-text").click(function() {
+            $("#intro").text("Teks telah diubah menggunakan jQuery!");
+        });
+    });
+
+    // Animasi bola memantul
+    const ball = document.getElementById("ball");
+    let x = 100, y = 100;
+    let dx = 3, dy = 3;
+    const ballSize = 50;
+
+    function animate() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        if (x + ballSize >= width || x <= 0) {
+            dx = -dx;
+        }
+        if (y + ballSize >= height || y <= 0) {
+            dy = -dy;
+        }
+
+        x += dx;
+        y += dy;
+        
+        ball.style.left = x + "px";
+        ball.style.top = y + "px";
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Perpustakaan Bambang Sugiarto</p>
+</footer>
+
 
 </body>
 </html>
