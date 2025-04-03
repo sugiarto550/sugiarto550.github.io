@@ -51,22 +51,36 @@
             width: 100%;
         }
 
-         /* Animasi bola */
-         .ball {
+        /* Animasi bola bergerak ke segala arah */
+        .ball {
             width: 50px;
             height: 50px;
             background-color: #ff4757;
             border-radius: 50%;
             position: absolute;
-            animation: bounce 1.5s infinite;
+            animation: moveBall 4s linear infinite;
         }
 
-        @keyframes bounce {
-            0%, 100% {
+        @keyframes moveBall {
+            0% {
                 top: 0;
+                left: 0;
+            }
+            25% {
+                top: 200px;
+                left: 50%;
             }
             50% {
+                top: 400px;
+                left: 100%;
+            }
+            75% {
                 top: 200px;
+                left: 50%;
+            }
+            100% {
+                top: 0;
+                left: 0;
             }
         }
 
