@@ -28,6 +28,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
+            display: flex;
+            align-items: center; /* Memastikan teks dan gambar sejajar */
         }
         .event h2 {
             margin: 0;
@@ -61,7 +63,7 @@
             max-width: 200px;  /* Membatasi ukuran maksimal gambar */
             height: auto;  /* Menjaga rasio aspek gambar */
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-left: 20px; /* Memberikan jarak antara gambar dan teks */
         }
     </style>
 </head>
@@ -71,20 +73,24 @@
         
         <div class="event">
             <img src="https://i.imgur.com/mJyuvjO.jpg" alt="Pementasan Teater Biografi Cinta">
-            <h2>Pementasan Teater: Biografi Cinta</h2>
-            <p class="date">Tanggal: 11 Februari 2025</p>
-            <p class="location">Lokasi: Depan Gedung FKIP, Universitas Singaperbangsa Karawang</p>
-            <p>Pementasan teater gratis yang menampilkan kisah cinta dalam berbagai perspektif. Jangan lewatkan kesempatan ini!</p>
-            <a href="#" class="register-btn">Info Selengkapnya</a>
+            <div>
+                <h2>Pementasan Teater: Biografi Cinta</h2>
+                <p class="date">Tanggal: 11 Februari 2025</p>
+                <p class="location">Lokasi: Depan Gedung FKIP, Universitas Singaperbangsa Karawang</p>
+                <p>Pementasan teater gratis yang menampilkan kisah cinta dalam berbagai perspektif. Jangan lewatkan kesempatan ini!</p>
+                <a href="#" class="register-btn">Info Selengkapnya</a>
+            </div>
         </div>
 
         <div class="event">
+            <div>
+                <h2>National Library Innovation</h2>
+                <p class="date">Tanggal: 10 Maret - 21 April 2025</p>
+                <p class="location">Lokasi: Depan Gedung Vokasi UM, Universitas Negeri Malang</p>
+                <p>Untuk menampilkan inovasi terbaru terhadap perkembangan perpustakaan saat ini!</p>
+                <a href="#" class="register-btn">Info Selengkapnya</a>
+            </div>
             <img src="https://i.imgur.com/kMNBM4u.jpg" alt="National Library Innovation Proposal Competition">
-            <h2>National Library Innovation</h2>
-            <p class="date">Tanggal: 10 Maret - 21 April 2025</p>
-            <p class="location">Lokasi: Depan Gedung Vokasi UM, Universitas Negeri Malang</p>
-            <p>Untuk menampilkan inovasi terbaru terhadap perkembangan perpustakaan saat ini!</p>
-            <a href="#" class="register-btn">Info Selengkapnya</a>
         </div>
     </div>
 </body>
