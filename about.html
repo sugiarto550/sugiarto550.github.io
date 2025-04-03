@@ -58,6 +58,16 @@
             background-color: #ff4757;
             border-radius: 50%;
             position: absolute;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                top: 0;
+            }
+            50% {
+                top: 200px;
+            }
         }
 
         /* Rekomendasi Buku */
@@ -276,6 +286,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Bola Animasi -->
+    <div class="ball"></div>
 
     <!-- Footer -->
     <footer>
