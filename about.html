@@ -3,24 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Kegiatan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Bambang Sugiarto</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        window.onload = function() {
+            alert("Selamat datang di website Perpustakaan Bambang Sugiarto!");
+            console.log("Selamat datang di website Perpustakaan Bambang Sugiarto!");
+        };
+    </script>
     <style>
+        /* Styling dasar */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
+            overflow-x: hidden;
+            background-color: #e4b20d;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #00a8ff;
+            padding: 15px;
             text-align: center;
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
         }
-        h1 {
+
+        /* Container utama */
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #00a8ff;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+         /* Animasi bola */
+         .ball {
+            width: 50px;
+            height: 50px;
+            background-color: #ff4757;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        /* Rekomendasi Buku */
+        #rekomendasi-buku {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .book {
+            display: inline-block;
+            background: white;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .book img {
+            width: 100px;
+            height: 150px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        /* Halaman Lain */
+        .main-content {
+            padding: 20px;
+            background-color: #ffdf85;
+            text-align: center;
+        }
+
+        .main-content h3 {
             color: #333;
         }
+
+        /* Search Bar */
+        #search-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        #searchInput {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Event Kegiatan Styling */
         .event {
             background: white;
             margin: 20px 0;
@@ -79,6 +171,77 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Beranda</a>
+        <a href="about.html">About Me</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="blog.html">Blog</a>
+    </div>
+
+    <!-- Konten utama -->
+    <div class="container">
+        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
+        <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
+        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
+    </div>
+
+    <!-- Halaman Lain -->
+    <div class="main-content">
+        <h3>Halaman Lain</h3>
+        <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di 
+            <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> 
+            untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.
+        </p>
+    </div>
+
+    <!-- Search Bar -->
+    <section id="search-section">
+        <h2>Cari Buku</h2>
+        <input type="text" id="searchInput" placeholder="Cari buku berdasarkan judul, penulis, atau kategori..." onkeyup="searchBooks()">
+    </section>
+
+    <!-- Bagian Rekomendasi Buku -->
+    <section id="rekomendasi-buku">
+        <h2>Rekomendasi Buku</h2>
+        <div class="container">
+            <div class="book">
+                <a href="https://drive.google.com/file/d/1X0Uh0wrrA4u1zaMVGzGLHqUmRupVvppi/view?usp=drive_link" target="_blank">
+                    <img src="konsep-logika.jpg" alt="Konsep Logika">
+                </a>
+                <p><strong>Judul:</strong> Konsep Logika</p>
+                <p><strong>Penulis:</strong> Marzuki Ahmad</p>
+                <p><strong>Kategori:</strong> Pelajaran</p>
+            </div>  
+            <div class="book">
+                <a href="https://drive.google.com/file/d/1n4rF9VVOUAHsPwZjyqnpBFnkPf56Hrht/view?usp=drive_link" target="_blank">
+                    <img src="images/Aku-Kisahku-dan-Cita-Cita-untuk-Negeriku.jpg" alt="Aku, Kisahku dan Cita-Cita untuk Negeriku">
+                </a>
+                <p><strong>Judul:</strong> Aku, Kisahku dan Cita-Cita untuk Negeriku</p>
+                <p><strong>Penulis:</strong> Reza Kurniawan Harnandika</p>
+                <p><strong>Kategori:</strong> Motivasi</p>
+            </div>            
+            <div class="book">
+                <a href="https://drive.google.com/file/d/1Dfa2_SkzugWzLsvP2uze_kSWeTNqpjgA/view?usp=drive_link" target="_blank">
+                    <img src="images/Dasar-dasar-Layanan-Perpustakaan.jpg" alt="Dasar-dasar Layanan Perpustakaan">
+                </a>
+                <p><strong>Judul:</strong> Dasar-dasar Layanan Perpustakaan</p>
+                <p><strong>Penulis:</strong> Bambang Sugiarto</p>
+                <p><strong>Kategori:</strong> Pelajaran</p>
+            </div>          
+            <div class="book">
+                <a href="https://drive.google.com/file/d/1epdw61NBXDXDihclKxRvLR49g8oAGE0Y/view?usp=drive_link" target="_blank">
+                    <img src="images/Komunikasi-Massa.jpg" alt="Komunikasi Massa">
+                </a>
+                <p><strong>Judul:</strong> Komunikasi Massa</p>
+                <p><strong>Penulis:</strong> Riris Loisa</p>
+                <p><strong>Kategori:</strong> Penelitian</p>
+            </div>                           
+        </div>
+    </section>
+
+    <!-- Event Kegiatan -->
     <div class="container">
         <h1>Event Kegiatan</h1>
         
@@ -103,16 +266,21 @@
                 <h2>National Library Innovation</h2>
                 <p class="date">Tanggal: 10 Maret - 21 April 2025</p>
                 <p class="location">Lokasi: Depan Gedung Vokasi UM, Universitas Negeri Malang</p>
-                <p>Untuk menampilkan inovasi terbaru terhadap perkembangan perpustakaan saat ini!</p>
-                <a href="https://www.instagram.com/youraccount" class="register-btn" target="_blank">Info Selengkapnya</a>
+                <p>Perpustakaan Nasional mengadakan acara inovasi layanan perpustakaan dengan berbagai teknologi canggih dan diskusi dengan para ahli di bidang teknologi.</p>
+                <a href="https://www.nasional.or.id" class="register-btn" target="_blank">Daftar Sekarang</a>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/perpusdig.um" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://www.facebook.com/youraccount" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="https://www.instagram.com/perpustakaan.id" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.facebook.com/perpustakaan.id" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://twitter.com/perpustakaan" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
                 </div>
             </div>
-            <img src="https://i.imgur.com/kMNBM4u.jpg" alt="National Library Innovation Proposal Competition">
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bambang Sugiarto. Semua hak dilindungi.</p>
+    </footer>
+
 </body>
 </html>
