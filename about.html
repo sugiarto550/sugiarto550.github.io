@@ -1,313 +1,76 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bambang Sugiarto</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script>
-        window.onload = function() {
-            alert("Selamat datang di website Perpustakaan Bambang Sugiarto!");
-            console.log("Selamat datang di website Perpustakaan Bambang Sugiarto!");
-        };
-    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>About Me</title>
     <style>
-        /* Styling dasar */
         body {
-            margin: 0;
-            overflow-x: hidden;
-            background-color: #e4b20d;
-            color: black;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: #00a8ff;
-            padding: 15px;
             text-align: center;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
         }
         .navbar a {
             color: white;
+            padding: 10px 15px;
             text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        /* Container utama */
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #00a8ff;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Animasi bola bergerak ke segala arah */
-        .ball {
-            width: 50px;
-            height: 50px;
-            background-color: #ff4757;
-            border-radius: 50%;
-            position: absolute;
-            animation: moveBall 4s linear infinite;
-        }
-
-        @keyframes moveBall {
-            0% {
-                top: 0;
-                left: 0;
-            }
-            25% {
-                top: 200px;
-                left: 50%;
-            }
-            50% {
-                top: 400px;
-                left: 100%;
-            }
-            75% {
-                top: 200px;
-                left: 50%;
-            }
-            100% {
-                top: 0;
-                left: 0;
-            }
-        }
-
-        /* Rekomendasi Buku */
-        #rekomendasi-buku {
-            background-color: #f9f9f9;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .book {
-            display: inline-block;
-            background: white;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 250px;
-            text-align: center;
-        }
-
-        .book img {
-            width: 100px;
-            height: 150px;
-            display: block;
-            margin: 0 auto 10px;
-        }
-
-        /* Halaman Lain */
-        .main-content {
-            padding: 20px;
-            background-color: #ffdf85;
-            text-align: center;
-        }
-
-        .main-content h3 {
-            color: #333;
-        }
-
-        /* Search Bar */
-        #search-section {
-            text-align: center;
-            padding: 20px;
-            background-color: #f1f1f1;
-        }
-
-        #searchInput {
-            width: 60%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        /* Event Kegiatan Styling */
-        .event {
-            background: white;
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            display: flex;
-            align-items: center;
-        }
-        .event h2 {
-            margin: 0;
-            color: #007BFF;
-        }
-        .event p {
-            color: #555;
-            margin-bottom: 10px;
-        }
-        .event .date {
-            font-weight: bold;
-            color: #e44d26;
-            margin-bottom: 5px;
-        }
-        .event .location {
-            font-style: italic;
-            color: #777;
-            margin-bottom: 15px;
-        }
-        .register-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .register-btn:hover {
-            background-color: #0056b3;
-        }
-        .event img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
-        .social-links {
-            margin-top: 10px;
-        }
-        .social-links a {
-            text-decoration: none;
-            color: #007BFF;
-            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
     <div class="navbar">
-        <a href="#">Beranda</a>
+        <a href="index.html">Beranda</a>
         <a href="about.html">About Me</a>
         <a href="contact-us.html">Contact Us</a>
         <a href="blog.html">Blog</a>
     </div>
-
-    <!-- Konten utama -->
-    <div class="container">
-        <h1>Selamat Datang di Website Bambang Sugiarto!</h1>
-        <h2>Mari menjelajahi dunia ilmu pengetahuan dan kreativitas tanpa batas.</h2>
-        <p id="intro">Setiap perjalanan dimulai dengan langkah pertama. Terima kasih telah mengunjungi halaman ini.</p>
-    </div>
-
-    <!-- Halaman Lain -->
-    <div class="main-content">
-        <h3>Halaman Lain</h3>
-        <p>Perpustakaan Bambang Sugiarto yang penuh inspirasi melakukan kunjungan di 
-            <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> 
-            untuk mengetahui koleksi dan layanan apa saja yang berada di perpustakaan itu dan inovasi baru apa yang tersedia.
-        </p>
-    </div>
-
-    <!-- Search Bar -->
-    <section id="search-section">
-        <h2>Cari Buku</h2>
-        <input type="text" id="searchInput" placeholder="Cari buku berdasarkan judul, penulis, atau kategori..." onkeyup="searchBooks()">
-    </section>
-
-    <!-- Bagian Rekomendasi Buku -->
-    <section id="rekomendasi-buku">
-        <h2>Rekomendasi Buku</h2>
-        <div class="container">
-            <div class="book">
-                <a href="https://drive.google.com/file/d/1X0Uh0wrrA4u1zaMVGzGLHqUmRupVvppi/view?usp=drive_link" target="_blank">
-                    <img src="konsep-logika.jpg" alt="Konsep Logika">
-                </a>
-                <p><strong>Judul:</strong> Konsep Logika</p>
-                <p><strong>Penulis:</strong> Marzuki Ahmad</p>
-                <p><strong>Kategori:</strong> Pelajaran</p>
-            </div>  
-            <div class="book">
-                <a href="https://drive.google.com/file/d/1n4rF9VVOUAHsPwZjyqnpBFnkPf56Hrht/view?usp=drive_link" target="_blank">
-                    <img src="images/Aku-Kisahku-dan-Cita-Cita-untuk-Negeriku.jpg" alt="Aku, Kisahku dan Cita-Cita untuk Negeriku">
-                </a>
-                <p><strong>Judul:</strong> Aku, Kisahku dan Cita-Cita untuk Negeriku</p>
-                <p><strong>Penulis:</strong> Reza Kurniawan Harnandika</p>
-                <p><strong>Kategori:</strong> Motivasi</p>
-            </div>            
-            <div class="book">
-                <a href="https://drive.google.com/file/d/1Dfa2_SkzugWzLsvP2uze_kSWeTNqpjgA/view?usp=drive_link" target="_blank">
-                    <img src="images/Dasar-dasar-Layanan-Perpustakaan.jpg" alt="Dasar-dasar Layanan Perpustakaan">
-                </a>
-                <p><strong>Judul:</strong> Dasar-dasar Layanan Perpustakaan</p>
-                <p><strong>Penulis:</strong> Bambang Sugiarto</p>
-                <p><strong>Kategori:</strong> Pelajaran</p>
-            </div>          
-            <div class="book">
-                <a href="https://drive.google.com/file/d/1epdw61NBXDXDihclKxRvLR49g8oAGE0Y/view?usp=drive_link" target="_blank">
-                    <img src="images/Komunikasi-Massa.jpg" alt="Komunikasi Massa">
-                </a>
-                <p><strong>Judul:</strong> Komunikasi Massa</p>
-                <p><strong>Penulis:</strong> Riris Loisa</p>
-                <p><strong>Kategori:</strong> Penelitian</p>
-            </div>                           
-        </div>
-    </section>
-
-    <!-- Event Kegiatan -->
-    <div class="container">
-        <h1>Event Kegiatan</h1>
-        
-        <div class="event">
-            <img src="https://i.imgur.com/mJyuvjO.jpg" alt="Pementasan Teater Biografi Cinta">
-            <div>
-                <h2>Pementasan Teater: Biografi Cinta</h2>
-                <p class="date">Tanggal: 11 Februari 2025</p>
-                <p class="location">Lokasi: Depan Gedung FKIP, Universitas Singaperbangsa Karawang</p>
-                <p>Pementasan teater gratis yang menampilkan kisah cinta dalam berbagai perspektif. Jangan lewatkan kesempatan ini!</p>
-                <a href="https://www.instagram.com/eventkampus.co" class="register-btn" target="_blank">Info Selengkapnya</a>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/youraccount" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://www.facebook.com/youraccount" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="https://twitter.com/youraccount" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="event">
-            <div>
-                <h2>National Library Innovation</h2>
-                <p class="date">Tanggal: 10 Maret - 21 April 2025</p>
-                <p class="location">Lokasi: Depan Gedung Vokasi UM, Universitas Negeri Malang</p>
-                <p>Perpustakaan Nasional mengadakan acara inovasi layanan perpustakaan dengan berbagai teknologi canggih dan diskusi dengan para ahli di bidang teknologi.</p>
-                <a href="https://www.nasional.or.id" class="register-btn" target="_blank">Daftar Sekarang</a>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/perpustakaan.id" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://www.facebook.com/perpustakaan.id" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="https://twitter.com/perpustakaan" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bola Animasi -->
-    <div class="ball"></div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Bambang Sugiarto. Semua hak dilindungi.</p>
-    </footer>
+    
+    <h1>About Me</h1>
+    <p>Halaman ini berisi tentang saya</p>
+    
+    <table>
+        <tr>
+            <td><b>Nama</b></td>
+            <td>Bambang Sugiarto</td>
+        </tr>
+        <tr>
+            <td>NIM</td>
+            <td>220709007</td>
+        </tr>
+        <tr>
+            <td>Program Studi</td>
+            <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+            <td>Fakultas</td>
+            <td>Ilmu Budaya</td>
+        </tr>
+        <tr>
+            <td>Universitas</td>
+            <td>Universitas Sumatera Utara</td>
+        </tr>
+    </table>
+    
+    <h4>Halaman lain</h4>
+    <ul>
+        <li>
+            <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan USU</a>
+        </li>
+    </ul>
 
 </body>
 </html>
