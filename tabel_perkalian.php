@@ -78,7 +78,7 @@
     <a href="contact-us.html">Contact Us</a>
     <a href="blog.html">Blog</a>
     <a href="hello.html">Hello</a>
-    <a href="tabel-perkalian.html">Tabel Perkalian</a>
+    <a href="tabel-perkalian.html">Fun Area</a>
   </div>
 
   <div class="content">
