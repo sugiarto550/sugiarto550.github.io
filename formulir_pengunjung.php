@@ -53,8 +53,17 @@
     </style>
 </head>
 <body>
+ <div class="navbar">
+    <a href="index.html">Beranda</a>
+    <a href="about.html">About Me</a>
+    <a href="contact-us.html">Contact Us</a>
+    <a href="blog.html">Blog</a>
+    <a href="hello.html">Hello</a>
+    <a href="formulir_pengunjung.php">Pengunjung</a>
+  </div>
 
-<h2>Formulir Data Pengunjung Perpustakaan Raisa Muriza Ramzi</h2>
+<div class="content">
+<h2>Formulir Data Pengunjung Perpustakaan Bambang Sugiarto</h2>
 <div class="form-container">
     <form method="post" action="proses.php">
         <table>
