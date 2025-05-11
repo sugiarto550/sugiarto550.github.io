@@ -16,6 +16,7 @@
       background-color: #333;
       overflow: hidden;
       padding: 10px 20px;
+      text-align: right;
     }
 
     .navbar a {
@@ -70,6 +71,14 @@
     tr:nth-child(odd) td {
       background-color: #91e71f;
     }
+
+    #result-box {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #222;
+    }
   </style>
 </head>
 <body>
@@ -93,13 +102,16 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Baris akan dibuat secara dinamis -->
+        <!-- Baris akan dibuat dengan JavaScript -->
       </tbody>
     </table>
+
+    <div id="result-box">Klik salah satu angka hasil perkalian untuk melihat penjelasannya.</div>
   </div>
 
   <script>
     const tbody = document.querySelector("#multiplicationTable tbody");
+    const resultBox = document.getElementById("result-box");
 
     for (let i = 1; i <= 10; i++) {
       const tr = document.createElement("tr");
@@ -112,7 +124,7 @@
         const result = i * j;
         td.textContent = result;
         td.onclick = () => {
-          alert(`${i} x ${j} = ${result}`);
+          resultBox.innerHTML = `${i} × ${j} = <strong>${result}</strong>`;
         };
         tr.appendChild(td);
       }
