@@ -1,136 +1,165 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabel Perkalian 10x10</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #93d0ec98;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tabel Perkalian & Kalkulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+  </head>
 
-    .navbar {
-      background-color: #333;
-      overflow: hidden;
-      padding: 10px 20px;
-      text-align: right;
-    }
+  <body
+    class="bg-gradient-to-r from-gray-900 to-teal-800 min-h-screen pb-16 font-sans text-white"
+  >
+    <div class="container mx-auto my-16 max-w-4xl px-4">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h2
+          class="text-4xl font-extrabold text-transparent bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text"
+        >
+          <i class="bi bi-grid-3x3-gap-fill mr-2"></i>Tabel Perkalian 1–10
+        </h2>
+      </div>
 
-    .navbar a {
-      color: #fff;
-      padding: 14px 20px;
-      text-decoration: none;
-      display: inline-block;
-    }
+      <!-- Table -->
+      <div class="overflow-x-auto mb-12">
+        <table
+          class="min-w-full table-auto border-collapse border border-teal-600 shadow-lg rounded-lg bg-gray-800"
+        >
+          <thead class="bg-teal-800 text-white">
+            <tr>
+              <th class="px-6 py-4 text-center text-xl font-semibold">x</th>
+              <!-- Header for 1-10 -->
+              <th class="px-6 py-4 text-center" colspan="10">
+                <div class="grid grid-cols-10 gap-2" id="tableHeader"></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Table body will be filled by JavaScript -->
+          </tbody>
+        </table>
+      </div>
 
-    .navbar a:hover {
-      background-color: #575757;
-      transition: 0.3s;
-    }
+      <!-- Kalkulator -->
+      <hr class="my-8 border-gray-600" />
+      <div
+        class="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-8 rounded-xl shadow-2xl transform transition-all duration-300 hover:scale-105"
+      >
+        <h4
+          class="text-3xl font-bold text-green-400 mb-6 flex items-center justify-center"
+        >
+          <i class="bi bi-calculator mr-2"></i>Kalkulator Perkalian
+        </h4>
+        <form id="kalkulatorForm">
+          <div class="flex justify-center gap-6 mb-8">
+            <!-- Input Fields -->
+            <input
+              type="number"
+              id="angka1"
+              placeholder="Angka pertama"
+              class="w-1/3 px-5 py-4 border-2 border-gray-600 rounded-lg bg-gray-900 text-white shadow-md focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-60 transition duration-300"
+              required
+            />
+            <span class="text-5xl font-bold text-green-500">×</span>
+            <input
+              type="number"
+              id="angka2"
+              placeholder="Angka kedua"
+              class="w-1/3 px-5 py-4 border-2 border-gray-600 rounded-lg bg-gray-900 text-white shadow-md focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-60 transition duration-300"
+              required
+            />
+          </div>
+          <div class="text-center mt-6">
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="px-10 py-4 bg-gradient-to-r from-green-600 to-teal-500 text-white rounded-full shadow-lg hover:bg-green-700 hover:shadow-2xl transition duration-300 transform hover:scale-105"
+            >
+              <i class="bi bi-check-circle mr-2"></i> Hitung
+            </button>
+          </div>
+        </form>
+        <div
+          id="hasil"
+          class="text-center mt-8 font-semibold text-2xl text-green-400"
+        ></div>
+      </div>
 
-    .content {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+      <!-- Kembali Button -->
+      <div class="text-center mt-8">
+        <a
+          href="Homework.html"
+          class="inline-flex items-center gap-2 px-6 py-3 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition"
+        >
+          <i class="bi bi-arrow-left-circle"></i> Kembali ke Homework
+        </a>
+      </div>
+    </div>
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+    <script>
+      // Generate multiplication table dynamically
+      function generateTable() {
+        const tableHeader = document.getElementById("tableHeader");
+        const tableBody = document.getElementById("tableBody");
 
-    table {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      background-color: #4cb8d3;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+        // Create table header (1-10)
+        for (let i = 1; i <= 10; i++) {
+          const span = document.createElement("span");
+          span.classList.add(
+            "text-center",
+            "text-lg",
+            "font-medium",
+            "text-teal-300"
+          );
+          span.textContent = i;
+          tableHeader.appendChild(span);
+        }
 
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-    }
+        // Create table rows (1-10)
+        for (let i = 1; i <= 10; i++) {
+          const row = document.createElement("tr");
 
-    th {
-      background-color: #7fc6f0bd;
-      color: #fff;
-      cursor: default;
-    }
+          // First cell for the row header (1, 2, ..., 10)
+          const th = document.createElement("th");
+          th.classList.add(
+            "px-6",
+            "py-4",
+            "text-center",
+            "font-medium",
+            "text-teal-300"
+          );
+          th.textContent = i;
+          row.appendChild(th);
 
-    tr:nth-child(even) td {
-      background-color: #d1b124;
-    }
+          // Create cells for multiplication results
+          for (let j = 1; j <= 10; j++) {
+            const td = document.createElement("td");
+            td.classList.add("px-6", "py-4", "text-center", "text-teal-100");
+            td.textContent = i * j;
+            row.appendChild(td);
+          }
 
-    tr:nth-child(odd) td {
-      background-color: #91e71f;
-    }
-
-    #result-box {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #222;
-    }
-  </style>
-</head>
-<body>
-  <div class="navbar">
-    <a href="index.html">Beranda</a>
-    <a href="about.html">About Me</a>
-    <a href="contact-us.html">Contact Us</a>
-    <a href="blog.html">Blog</a>
-    <a href="hello.html">Hello</a>
-    <a href="tabel-perkalian.html">Fun Area</a>
-  </div>
-
-  <div class="content">
-    <h1>Tabel Perkalian: BAMBANG SUGIARTO</h1>
-    <table id="multiplicationTable">
-      <thead>
-        <tr>
-          <th>x</th>
-          <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-          <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Baris akan dibuat dengan JavaScript -->
-      </tbody>
-    </table>
-
-    <div id="result-box">Klik salah satu angka hasil perkalian untuk melihat penjelasannya.</div>
-  </div>
-
-  <script>
-    const tbody = document.querySelector("#multiplicationTable tbody");
-    const resultBox = document.getElementById("result-box");
-
-    for (let i = 1; i <= 10; i++) {
-      const tr = document.createElement("tr");
-      const rowHeader = document.createElement("th");
-      rowHeader.textContent = i;
-      tr.appendChild(rowHeader);
-
-      for (let j = 1; j <= 10; j++) {
-        const td = document.createElement("td");
-        const result = i * j;
-        td.textContent = result;
-        td.onclick = () => {
-          resultBox.innerHTML = `${i} × ${j} = <strong>${result}</strong>`;
-        };
-        tr.appendChild(td);
+          // Append the row to the table body
+          tableBody.appendChild(row);
+        }
       }
 
-      tbody.appendChild(tr);
-    }
-  </script>
-</body>
+      // Call the function to generate the table when the page loads
+      window.onload = generateTable;
+
+      // Kalkulator logic
+      document
+        .getElementById("kalkulatorForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const a = parseFloat(document.getElementById("angka1").value);
+          const b = parseFloat(document.getElementById("angka2").value);
+          const hasil = a * b;
+          document.getElementById(
+            "hasil"
+          ).textContent = `${a} × ${b} = ${hasil}`;
+        });
+    </script>
+  </body>
 </html>
