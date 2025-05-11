@@ -1,162 +1,100 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabel Perkalian 10x10</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #93d0ec98;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar 
-      background-color: #333;
-      overflow: hidden;
-      padding: 10px 20px;
-      text-align: right;
-    }
-
-    .navbar a {
-      color: #fff;
-      padding: 14px 20px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .navbar a:hover {
-      background-color: #575757;
-      transition: 0.3s;
-    }
-
-    .content {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      background-color: #4cb8d3;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    th {
-      background-color: #7fc6f0bd;
-      color: #fff;
-      cursor: default;
-    }
-
-    tr:nth-child(even) td {
-      background-color: #d1b124;
-    }
-
-    tr:nth-child(odd) td {
-      background-color: #91e71f;
-    }
-
-    #result-box {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #222;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tabel Perkalian & Kalkulator Interaktif</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="navbar">
-    <a href="index.html">Beranda</a>
-    <a href="about.html">About Me</a>
-    <a href="contact-us.html">Contact Us</a>
-    <a href="blog.html">Blog</a>
-    <a href="hello.html">Hello</a>
-    <a href="tabel-perkalian.html">Fun Area</a>
+
+<body class="bg-gradient-to-r from-gray-900 to-teal-800 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-10">
+    <!-- Navbar -->
+    <nav class="flex justify-end space-x-4 mb-8">
+      <a href="index.html" class="text-white hover:underline">Beranda</a>
+      <a href="about.html" class="text-white hover:underline">About Me</a>
+      <a href="contact-us.html" class="text-white hover:underline">Contact Us</a>
+      <a href="blog.html" class="text-white hover:underline">Blog</a>
+      <a href="hello.html" class="text-white hover:underline">Hello</a>
+      <a href="tabel-perkalian.html" class="text-white hover:underline">Fun Area</a>
+    </nav>
+
+    <!-- Judul -->
+    <h1 class="text-center text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-teal-500">
+      Tabel Perkalian Interaktif: BAMBANG SUGIARTO
+    </h1>
+
+    <!-- Tabel Perkalian -->
+    <div class="overflow-x-auto mb-6">
+      <table class="min-w-full border-collapse border border-teal-600 shadow-lg rounded-lg bg-gray-800">
+        <thead class="bg-teal-800 text-white">
+          <tr>
+            <th class="px-4 py-2 text-center text-lg font-semibold">x</th>
+            <th class="px-4 py-2 text-center" colspan="10">
+              <div class="grid grid-cols-10 gap-2 text-teal-300 font-semibold">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Hasil Klik -->
+    <div id="result-box" class="text-center text-xl font-bold text-green-300 mt-4">
+      Klik salah satu angka untuk melihat penjelasannya.
+    </div>
+
+    <!-- Kalkulator -->
+    <div class="mt-16 bg-gray-900 p-8 rounded-xl shadow-xl">
+      <h2 class="text-3xl text-green-400 text-center mb-6 font-bold">Kalkulator Perkalian</h2>
+      <form id="kalkulatorForm" class="text-center">
+        <input type="number" id="angka1" placeholder="Angka pertama"
+          class="w-1/4 px-4 py-2 rounded bg-gray-800 border border-gray-600 text-white mr-2" required />
+        <span class="text-2xl font-bold">×</span>
+        <input type="number" id="angka2" placeholder="Angka kedua"
+          class="w-1/4 px-4 py-2 rounded bg-gray-800 border border-gray-600 text-white ml-2" required />
+        <button type="submit"
+          class="mt-4 block mx-auto px-6 py-2 bg-green-600 hover:bg-green-700 rounded text-white font-semibold transition">Hitung</button>
+      </form>
+      <div id="hasil" class="text-center text-2xl text-green-400 mt-6"></div>
+    </div>
   </div>
 
-  <div class="content">
-    <i class="bi bi-grid-3x3-gap-fill mr-2"></i>Tabel Perkalian 1–10
-        </h2>
-      </div>
+  <script>
+    const tableBody = document.getElementById("tableBody");
+    const resultBox = document.getElementById("result-box");
 
-      <!-- Table -->
-      <div class="overflow-x-auto mb-12">
-        <table
-          class="min-w-full table-auto border-collapse border border-teal-600 shadow-lg rounded-lg bg-gray-800"
-        >
-          <thead class="bg-teal-800 text-white">
-            <tr>
-              <th class="px-6 py-4 text-center text-xl font-semibold">x</th>
-              <!-- Header for 1-10 -->
-              <th class="px-6 py-4 text-center" colspan="10">
-                <div class="grid grid-cols-10 gap-2" id="tableHeader"></div>
-              </th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <!-- Table body will be filled by JavaScript -->
-          </tbody>
-        </table>
-      </div>
+    for (let i = 1; i <= 10; i++) {
+      const row = document.createElement("tr");
 
-      <!-- Kalkulator -->
-      <hr class="my-8 border-gray-600" />
-      <div
-        class="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-8 rounded-xl shadow-2xl transform transition-all duration-300 hover:scale-105"
-      >
-        <h4
-          class="text-3xl font-bold text-green-400 mb-6 flex items-center justify-center"
-        >
-          <i class="bi bi-calculator mr-2"></i>Kalkulator Perkalian
-        </h4>
-        <form id="kalkulatorForm">
-          <div class="flex justify-center gap-6 mb-8">
-            <!-- Input Fields -->
-            <input
-              type="number"
-              id="angka1"
-              placeholder="Angka pertama"
-              class="w-1/3 px-5 py-4 border-2 border-gray-600 rounded-lg bg-gray-900 text-white shadow-md focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-60 transition duration-300"
-              required
-            />
-            <span class="text-5xl font-bold text-green-500">×</span>
-            <input
-              type="number"
-              id="angka2"
-              placeholder="Angka kedua"
-              class="w-1/3 px-5 py-4 border-2 border-gray-600 rounded-lg bg-gray-900 text-white shadow-md focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-60 transition duration-300"
-              required
-            />
-          </div>
-          <div class="text-center mt-6">
-            <!-- Submit Button -->
-            <button
-              type="submit"
-              class="px-10 py-4 bg-gradient-to-r from-green-600 to-teal-500 text-white rounded-full shadow-lg hover:bg-green-700 hover:shadow-2xl transition duration-300 transform hover:scale-105"
-            >
-              <i class="bi bi-check-circle mr-2"></i> Hitung
-            </button>
-          </div>
-        </form>
-        <div
-          id="hasil"
-          class="text-center mt-8 font-semibold text-2xl text-green-400"
-        ></div>
-      </div>
+      const th = document.createElement("th");
+      th.className = "px-4 py-2 text-center font-medium text-teal-300";
+      th.textContent = i;
+      row.appendChild(th);
+
+      for (let j = 1; j <= 10; j++) {
+        const td = document.createElement("td");
+        td.className = "px-4 py-2 text-center text-teal-100 hover:bg-teal-600 cursor-pointer transition";
+        td.textContent = i * j;
+        td.onclick = () => {
+          resultBox.innerHTML = `${i} × ${j} = <strong>${i * j}</strong>`;
+        };
+        row.appendChild(td);
+      }
+
+      tableBody.appendChild(row);
+    }
+
+    document.getElementById("kalkulatorForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const a = parseFloat(document.getElementById("angka1").value);
+      const b = parseFloat(document.getElementById("angka2").value);
+      const hasil = a * b;
+      document.getElementById("hasil").textContent = `${a} × ${b} = ${hasil}`;
+    });
+  </script>
+</body>
+</html>
