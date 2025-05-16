@@ -219,7 +219,7 @@
             background-color: #dc3545;
             color: white;
         }
-        
+
     </style>
 </head>
 <body>
@@ -417,6 +417,24 @@
 
     animate();
 </script>
+<!-- Cookie Consent Script -->
+    <script>
+        window.addEventListener("load", function () {
+            if (!localStorage.getItem("cookieConsent")) {
+                document.getElementById("cookieConsent").style.display = "block";
+            }
+        });
 
+        document.getElementById("acceptCookie").onclick = function () {
+            localStorage.setItem("cookieConsent", "accepted");
+            document.getElementById("cookieConsent").style.display = "none";
+        };
+
+        document.getElementById("declineCookie").onclick = function () {
+            localStorage.setItem("cookieConsent", "declined");
+            document.getElementById("cookieConsent").style.display = "none";
+        };
+    </script>
+    
 </body>
 </html>
