@@ -168,6 +168,58 @@
             color: #007BFF;
             margin-right: 10px;
         }
+
+        /* Cookie Consent */
+        .cookie-consent {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 9999;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+            display: none;
+        }
+
+        .cookie-consent .btn-group {
+            margin-top: 10px;
+        }
+
+        .btn-outline-custom {
+            padding: 8px 12px;
+            margin-right: 10px;
+            border: 1px solid #007BFF;
+            background: none;
+            color: #007BFF;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .btn-outline-danger {
+            padding: 8px 12px;
+            border: 1px solid #dc3545;
+            background: none;
+            color: #dc3545;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+        
     </style>
 </head>
 <body>
@@ -294,6 +346,15 @@
                 <a href="https://www.instagram.com/p/DJOn6lwvH1p/?igsh=amM1bG5ta3RxbDZ5', '_blank" class="register-btn" target="_blank">Info Selengkapnya</a>
                 </div>
             </div>
+        </div>
+    </div>
+
+     <!-- Cookie Consent Pop-up -->
+    <div id="cookieConsent" class="cookie-consent">
+        <p>Website ini menggunakan cookie untuk meningkatkan pengalaman pengguna. Pilih setuju atau tolak cookie kami.</p>
+        <div class="btn-group">
+            <button id="acceptCookie" class="btn btn-outline-custom">Terima Semua Cookies</button>
+            <button id="declineCookie" class="btn btn-outline-danger">Tolak</button>
         </div>
     </div>
 
