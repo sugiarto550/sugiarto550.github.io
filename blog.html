@@ -68,6 +68,25 @@
        <!-- Garis pembatas -->
 <hr style="border: 1px solid #000; width: 80%; margin: 30px auto;">
     
+    <section class="text-center mt-12">
+    <h2 class="text-3xl font-bold text-blue-700">Tambahkan Saran dan Komentar Anda</h2>
+  </section>
+
+  <!-- Form -->
+  <section class="flex justify-center mt-8 px-4">
+    <form class="bg-white shadow-lg rounded-lg p-8 w-full max-w-xl">
+      <label class="block text-gray-800 font-semibold mb-2" for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" class="w-full border border-gray-300 rounded px-4 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+      <label class="block text-gray-800 font-semibold mb-2" for="komentar">Komentar</label>
+      <textarea id="komentar" name="komentar" rows="5" class="w-full border border-gray-300 rounded px-4 py-2 mb-6 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+
+      <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded">
+        Kirim
+      </button>
+    </form>
+  </section>
+
     <div class="ball" id="ball"></div>
 
     <script>
