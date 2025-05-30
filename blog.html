@@ -1,104 +1,123 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Blog - Bambang Sugiarto</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #5e0909;
-            overflow: hidden;
-            position: relative;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: rgb(90, 173, 11);
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(12, 41, 201, 0.575);
-            position: relative;
-            z-index: 2;
-        }
-        .navbar {
-            margin-bottom: 20px;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-        .ball {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forum Review & Profil Bambang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Bola animasi */
+    .ball {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    /* Tambahan untuk halaman utama */
+    .about-section {
+      background-color: #5e0909;
+      color: white;
+      padding: 2rem;
+    }
+    .cv-container {
+      background: rgb(90, 173, 11);
+      padding: 2rem;
+      box-shadow: 0px 0px 10px rgba(12, 41, 201, 0.575);
+      color: black;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+  </style>
 </head>
-<body>
-    <div class="navbar">
-        <a href="index.html">Beranda</a>
-        <a href="about.html">About Me</a>
-        <a href="contact-us.html">Contact Us</a>
-        <a href="blog.html">Blog</a>
+<body class="bg-gray-100 font-sans relative overflow-hidden">
+
+  <!-- Bola animasi -->
+  <div class="ball" id="ball"></div>
+
+  <!-- Header Forum -->
+  <header class="bg-white shadow-md p-4 flex justify-between items-center z-10 relative">
+    <h1 class="text-xl font-bold text-gray-800">Forum Review</h1>
+    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Tambah Topik</button>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="bg-gray-200 px-4 py-2">
+    <ul class="flex space-x-4">
+      <li><a href="#" class="text-blue-600 font-medium hover:underline">Semua</a></li>
+      <li><a href="#" class="text-gray-700 hover:text-blue-600">Film</a></li>
+      <li><a href="#" class="text-gray-700 hover:text-blue-600">Buku</a></li>
+      <li><a href="#" class="text-gray-700 hover:text-blue-600">Produk</a></li>
+      <li><a href="#" class="text-gray-700 hover:text-blue-600">Lainnya</a></li>
+    </ul>
+  </nav>
+
+  <!-- Konten Forum -->
+  <main class="p-4 space-y-6">
+    <!-- Topik Diskusi -->
+    <section class="space-y-4">
+      <div class="bg-white p-4 rounded shadow-md hover:shadow-lg transition">
+        <h2 class="text-lg font-semibold text-blue-700">[Review Film] Dune: Part Two</h2>
+        <p class="text-gray-600">Apa pendapat kalian tentang alur dan visual efek di film Dune terbaru?</p>
+        <div class="text-sm text-gray-500 mt-2">Dibuat oleh: <span class="font-medium">Andi</span> • 15 komentar</div>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow-md hover:shadow-lg transition">
+        <h2 class="text-lg font-semibold text-blue-700">[Review Buku] Filosofi Teras</h2>
+        <p class="text-gray-600">Apakah buku ini benar-benar membantu untuk menghadapi overthinking?</p>
+        <div class="text-sm text-gray-500 mt-2">Dibuat oleh: <span class="font-medium">Rina</span> • 8 komentar</div>
+      </div>
+    </section>
+
+    <!-- Garis Pembatas -->
+    <hr class="border-gray-400 my-6">
+
+    <!-- Bagian Tentang Saya -->
+    <section class="about-section text-center">
+      <h2 class="text-2xl font-bold mb-2">About Me</h2>
+      <p class="mb-4">Halo! Saya <strong>Bambang Sugiarto</strong>, seorang pembelajar yang terus berkembang. Ini adalah <i>Homepage</i> pertama saya, tempat saya bereksperimen dan mengeksplorasi dunia digital.</p>
+      <h3 class="text-xl font-semibold">Semangat belajar adalah kunci menuju masa depan yang lebih baik!</h3>
+    </section>
+
+    <!-- CV & Feedback -->
+    <div class="cv-container">
+      <h1 class="text-2xl font-bold mb-2">Feedback Pengguna Perpustakaan</h1>
+      <h2 class="text-xl mb-4">BAMBANG SUGIARTO</h2>
+      <hr class="border-black mb-4"/>
+      <p class="text-base">Silakan tinggalkan ulasan Anda terkait layanan perpustakaan.</p>
     </div>
-    
-    <div class="container">
-        <h2>About Me</h2>
-        <p>Halo! Saya Bambang Sugiarto, seorang pembelajar yang terus berkembang. Ini adalah <i>Homepage</i> pertama saya, tempat saya bereksperimen dan mengeksplorasi dunia digital.</p>
-        <h3>Semangat belajar adalah kunci menuju masa depan yang lebih baik!</h3>
-    </div>
+  </main>
 
-    <!-- Garis pembatas -->
-<hr style="border: 1px solid #000; width: 80%; margin: 30px auto;">
+  <!-- Script Bola Animasi -->
+  <script>
+    const ball = document.getElementById("ball");
+    let x = 100, y = 100;
+    let dx = 3, dy = 3;
+    const ballSize = 50;
 
-<!-- Curriculum Vitae -->
-<div class="container">
-    <h1>Feedback Pengguna Perpustakaan </h1>
-    <h2>BAMBANG SUGIARTO</h2>
-       <!-- Garis pembatas -->
-<hr style="border: 1px solid #000; width: 80%; margin: 30px auto;">
-    
+    function animate() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
 
+      if (x + ballSize >= width || x <= 0) dx = -dx;
+      if (y + ballSize >= height || y <= 0) dy = -dy;
 
-    <div class="ball" id="ball"></div>
+      x += dx;
+      y += dy;
 
-    <script>
-        const ball = document.getElementById("ball");
-        let x = 100, y = 100;
-        let dx = 3, dy = 3;
-        const ballSize = 50;
+      ball.style.left = x + "px";
+      ball.style.top = y + "px";
 
-        function animate() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
+      requestAnimationFrame(animate);
+    }
 
-            if (x + ballSize >= width || x <= 0) {
-                dx = -dx;
-            }
-            if (y + ballSize >= height || y <= 0) {
-                dy = -dy;
-            }
+    animate();
+  </script>
 
-            x += dx;
-            y += dy;
-            
-            ball.style.left = x + "px";
-            ball.style.top = y + "px";
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-    </script>
 </body>
 </html>
