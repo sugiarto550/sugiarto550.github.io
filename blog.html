@@ -1,72 +1,22 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forum Diskusi Review</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 font-sans">
+<script>
+  const komentarForm = document.getElementById('komentarForm');
+  const daftarKomentar = document.getElementById('daftarKomentar');
 
-  <!-- Header -->
-  <header class="bg-white shadow-md p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-gray-800">Forum Diskusi</h1>
-    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Buat Topik</a>
-  </header>
+  komentarForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  <!-- Menu Navigasi -->
-  <nav class="bg-gray-200 px-4 py-2">
-    <ul class="flex space-x-4">
-      <li><a href="#semua" class="text-blue-600 font-medium hover:underline">Semua</a></li>
-      <li><a href="#film" class="text-gray-700 hover:text-blue-600">Film</a></li>
-      <li><a href="#buku" class="text-gray-700 hover:text-blue-600">Buku</a></li>
-      <li><a href="#produk" class="text-gray-700 hover:text-blue-600">Produk</a></li>
-      <li><a href="#lainnya" class="text-gray-700 hover:text-blue-600">Lainnya</a></li>
-    </ul>
-  </nav>
+    const nama = document.getElementById('nama').value.trim();
+    const komentar = document.getElementById('komentar').value.trim();
 
-  <!-- Daftar Topik Diskusi -->
-  <main class="p-4 space-y-6 max-w-3xl mx-auto">
+    if (nama && komentar) {
+      const baru = document.createElement('p');
+      baru.innerHTML = `<strong>${nama}:</strong> ${komentar}`;
+      daftarKomentar.appendChild(baru);
 
-    <!-- Topik 1 -->
-    <div id="film" class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
-      <h2 class="text-lg font-bold text-blue-700">[Review Film] Dune: Part Two</h2>
-      <p class="text-gray-700 mt-2">Apa pendapat kalian tentang alur cerita dan visual efek dari film Dune terbaru?</p>
-      <div class="mt-3 text-sm text-gray-500">Dibuat oleh <span class="font-semibold">Andi</span> • 15 komentar</div>
-      <div class="mt-4 pl-4 border-l-4 border-blue-200 space-y-2 text-sm text-gray-600">
-        <p><strong>Joko:</strong> Visualnya keren banget, terutama adegan gurun!</p>
-        <p><strong>Sari:</strong> Alurnya agak lambat, tapi sinematografinya memukau!</p>
-      </div>
-    </div>
-
-    <!-- Topik 2 -->
-    <div id="buku" class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
-      <h2 class="text-lg font-bold text-blue-700">[Review Buku] Filosofi Teras</h2>
-      <p class="text-gray-700 mt-2">Menurut kalian, apakah buku ini efektif membantu menghadapi overthinking?</p>
-      <div class="mt-3 text-sm text-gray-500">Dibuat oleh <span class="font-semibold">Rina</span> • 8 komentar</div>
-      <div class="mt-4 pl-4 border-l-4 border-green-200 space-y-2 text-sm text-gray-600">
-        <p><strong>Ari:</strong> Buku ini sangat menenangkan dan membuka wawasan.</p>
-        <p><strong>Lina:</strong> Cocok buat refleksi diri, aku suka kutipan-kutipannya.</p>
-      </div>
-    </div>
-
-    <!-- Topik 3 -->
-    <div id="produk" class="bg-white p-5 rounded-lg shadow hover:shadow-lg transition">
-      <h2 class="text-lg font-bold text-blue-700">[Review Produk] Headset Logitech G733</h2>
-      <p class="text-gray-700 mt-2">Bagaimana kualitas suara dan kenyamanan headset ini menurut kalian?</p>
-      <div class="mt-3 text-sm text-gray-500">Dibuat oleh <span class="font-semibold">Bambang</span> • 12 komentar</div>
-      <div class="mt-4 pl-4 border-l-4 border-purple-200 space-y-2 text-sm text-gray-600">
-        <p><strong>Indra:</strong> Suaranya jernih banget buat gaming.</p>
-        <p><strong>Maya:</strong> Ringan dan nyaman dipakai lama.</p>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="text-center text-gray-500 text-sm mt-10 pb-6">
-    &copy; 2025 Forum Review oleh Bambang Sugiarto
-  </footer>
-
-</body>
-</html>
+      // Bersihkan form dan hapus teks "Belum ada komentar" jika masih ada
+      komentarForm.reset();
+      const kosong = daftarKomentar.querySelector('p.text-gray-500');
+      if (kosong) kosong.remove();
+    }
+  });
+</script>
