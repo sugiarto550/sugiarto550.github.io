@@ -242,3 +242,49 @@
         <div
           class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center"
         >
+          <p class="text-xs text-center md:text-left">
+            &copy; 2025 Perpustakaan Bambang Sugiarto
+          </p>
+          <div class="flex gap-3 mt-2 md:mt-0 text-xs">
+            <a
+              href="index.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400"
+              >About</a
+            >
+            <a
+              href="blog.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400"
+              >blog</a
+            >
+            <a
+              href="contact-us.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400"
+              >Contact</a
+            >
+            <a
+              href="tabel-perkalian.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400"
+              >Fun Area</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JS Interaktif -->
+    <script src="java.js"></script>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
