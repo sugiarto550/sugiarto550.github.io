@@ -37,22 +37,46 @@
     </style>
   </head>
 
-  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <body
+    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300"
+  >
     <div class="min-h-screen flex flex-col">
       <!-- Navbar -->
-      <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b dark:border-gray-700 fade-in">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400">📚 BAMBANG SUGIARTO</span>
-          <button id="menu-btn" class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+      <header
+        class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b dark:border-gray-700 fade-in"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+        >
+          <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400"
+            >📚 BAMBANG SUGIARTO</span
+          >
+          <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
             </svg>
           </button>
-          <nav id="nav-links" class="hidden md:flex gap-6 font-medium text-base">
+          <nav
+            id="nav-links"
+            class="hidden md:flex gap-6 font-medium text-base"
+          >
             <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Home</a>
             <a href="about.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">About</a>
-            <a href="blog.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">blog</a>
+            <a href="blog.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Blog</a>
             <a href="contact-us.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Contact</a>
             <a href="tabel-perkalian.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Fun Area</a>
           </nav>
@@ -60,7 +84,7 @@
         <div id="mobile-nav" class="md:hidden hidden px-6 pb-4 space-y-2 font-medium text-base">
           <a href="index.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Home</a>
           <a href="about.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">About</a>
-          <a href="blog.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">blog</a>
+          <a href="blog.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Blog</a>
           <a href="contact-us.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Contact</a>
           <a href="tabel-perkalian.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Fun Area</a>
         </div>
@@ -70,16 +94,19 @@
         class="relative w-full bg-cover bg-center bg-no-repeat py-24 px-6 fade-in"
         style="background-image: url('https://images.unsplash.com/photo-1588666309996-3f232c8125c4?auto=format&fit=crop&w=1600&q=80');"
       >
-        <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/40 to-indigo-500/70 dark:from-gray-900/50 dark:to-gray-900/80 z-0"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-indigo-500/40 to-indigo-500/70 dark:from-gray-900/50 dark:to-gray-900/80 z-0"
+        ></div>
         <div class="relative z-10 max-w-3xl mx-auto text-center text-white">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold drop-shadow-lg text-indigo-800 dark:text-white">Feedback Pengunjung</h1>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold drop-shadow-lg text-indigo-800 dark:text-white">
+            Feedback Pengunjung
+          </h1>
           <p class="mt-6 text-lg sm:text-xl drop-shadow-md text-gray-600 dark:text-gray-300">
             Lihat apa kata mereka yang sudah berkunjung dan menikmati layanan kami
           </p>
         </div>
       </section>
 
-      <!-- Main -->
       <main class="flex-grow max-w-4xl mx-auto px-6 py-16">
         <h1 class="text-4xl font-bold text-center text-indigo-700 dark:text-indigo-300 mb-10 fade-in">
           Tambahkan Saran dan Komentar Anda
@@ -103,26 +130,19 @@
         </div>
 
         <!-- List Komentar -->
-        <div id="comment-list" class="space-y-6 fade-in">
-          <!-- Sample Comment -->
-          <div class="bg-indigo-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
-            <p class="font-semibold text-indigo-700 dark:text-indigo-300">Bagus Pratama</p>
-            <p class="text-gray-700 dark:text-gray-300 mt-1">
-              Website ini sangat membantu saya dalam mencari referensi yang dibutuhkan untuk tugas kuliah. Sangat berguna!
-            </p>
-            <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">Hapus</button>
-          </div>
-        </div>
+        <div id="comment-list" class="space-y-6 fade-in"></div>
       </main>
 
       <!-- Footer -->
       <footer class="bg-indigo-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-4 mt-auto fade-in">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-xs text-center md:text-left">&copy; 2025 Perpustakaan Bambang Sugiarto</p>
+          <p class="text-xs text-center md:text-left">
+            &copy; 2025 Perpustakaan Bambang Sugiarto
+          </p>
           <div class="flex gap-3 mt-2 md:mt-0 text-xs">
             <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
             <a href="about.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">About</a>
-            <a href="blog.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">blog</a>
+            <a href="blog.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Blog</a>
             <a href="contact-us.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
             <a href="tabel-perkalian.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Fun Area</a>
           </div>
@@ -130,42 +150,54 @@
       </footer>
     </div>
 
-    <!-- JS Interaktif -->
-    <script src="java.js"></script>
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileNav = document.getElementById("mobile-nav");
-
-      menuBtn.addEventListener("click", () => {
-        mobileNav.classList.toggle("hidden");
-      });
-    </script>
-
-    <!-- Script Komentar Interaktif -->
+    <!-- Interaktif -->
     <script>
       const feedbackForm = document.getElementById("feedback-form");
       const commentList = document.getElementById("comment-list");
 
+      // Tampilkan komentar dari localStorage
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+        savedComments.forEach(({ name, comment }) => {
+          addCommentToDOM(name, comment);
+        });
+      });
+
+      function addCommentToDOM(name, comment) {
+        const commentBox = document.createElement("div");
+        commentBox.className = "bg-indigo-50 dark:bg-gray-800 p-6 rounded-lg shadow-md";
+
+        commentBox.innerHTML = `
+          <p class="font-semibold text-indigo-700 dark:text-indigo-300">${name}</p>
+          <p class="text-gray-700 dark:text-gray-300 mt-1">${comment}</p>
+          <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+            Hapus
+          </button>
+        `;
+
+        commentList.appendChild(commentBox);
+      }
+
+      function saveComment(name, comment) {
+        const comments = JSON.parse(localStorage.getItem("comments")) || [];
+        comments.push({ name, comment });
+        localStorage.setItem("comments", JSON.stringify(comments));
+      }
+
+      function deleteComment(index) {
+        const comments = JSON.parse(localStorage.getItem("comments")) || [];
+        comments.splice(index, 1);
+        localStorage.setItem("comments", JSON.stringify(comments));
+      }
+
       feedbackForm.addEventListener("submit", function (e) {
         e.preventDefault();
-
         const name = document.getElementById("name").value.trim();
         const comment = document.getElementById("comment").value.trim();
 
         if (name && comment) {
-          const commentBox = document.createElement("div");
-          commentBox.className =
-            "bg-indigo-50 dark:bg-gray-800 p-6 rounded-lg shadow-md";
-
-          commentBox.innerHTML = `
-            <p class="font-semibold text-indigo-700 dark:text-indigo-300">${name}</p>
-            <p class="text-gray-700 dark:text-gray-300 mt-1">${comment}</p>
-            <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
-              Hapus
-            </button>
-          `;
-
-          commentList.appendChild(commentBox);
+          addCommentToDOM(name, comment);
+          saveComment(name, comment);
           feedbackForm.reset();
         }
       });
@@ -173,8 +205,17 @@
       commentList.addEventListener("click", function (e) {
         if (e.target.tagName === "BUTTON") {
           const commentBox = e.target.closest("div");
+          const index = Array.from(commentList.children).indexOf(commentBox);
+          deleteComment(index);
           commentBox.remove();
         }
+      });
+
+      // Toggle menu mobile
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
       });
     </script>
   </body>
