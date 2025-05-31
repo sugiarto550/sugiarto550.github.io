@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu Forum Interaktif</title>
+  <title>Forum Interaktif</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .active-tab {
-      @apply border-b-2 border-blue-600 text-blue-800;
+  <script>
+    // Tambahkan class dark mode jika sebelumnya disimpan di localStorage
+    if (localStorage.getItem("modeGelap") === "true") {
+      document.documentElement.classList.add("dark");
     }
-  </style>
+  </script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-white font-sans transition duration-300">
 
-  <header class="bg-blue-700 text-white p-4 shadow">
+  <header class="bg-blue-700 dark:bg-gray-800 text-white p-4 shadow flex justify-between items-center">
     <h1 class="text-2xl font-bold">📢 Forum Diskusi</h1>
+    <button onclick="toggleMode()" class="bg-white text-blue-700 dark:bg-gray-600 dark:text-white px-3 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+      🌙/☀️ Mode
+    </button>
   </header>
 
-  <nav class="bg-white shadow mt-2 p-4">
-    <ul class="flex flex-wrap gap-4 text-blue-700 font-medium" id="menuTabs">
+  <nav class="bg-white dark:bg-gray-800 shadow mt-2 p-4">
+    <ul class="flex flex-wrap gap-4 text-blue-700 dark:text-blue-300 font-medium" id="menuTabs">
       <li><button class="tab-button active-tab" data-tab="umum">💬 Umum</button></li>
       <li><button class="tab-button" data-tab="teknologi">💻 Teknologi</button></li>
       <li><button class="tab-button" data-tab="belajar">📚 Belajar</button></li>
@@ -28,54 +32,53 @@
 
   <main class="p-6 space-y-6">
 
-    <!-- Template untuk setiap tab -->
-    <div id="content-umum" class="tab-content block bg-white p-4 rounded shadow">
-      <h2 class="text-xl font-semibold text-gray-800">💬 Diskusi Umum</h2>
-      <p class="text-gray-600 mb-4">Tempat ngobrol santai tentang topik apa pun.</p>
-      <div class="space-y-2">
-        <textarea id="input-umum" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
-        <button onclick="kirimKomentar('umum')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
-        <div id="diskusi-umum" class="mt-4 space-y-2"></div>
-      </div>
+    <!-- Kategori -->
+    <div id="content-umum" class="tab-content block bg-white dark:bg-gray-800 p-4 rounded shadow">
+      <h2 class="text-xl font-semibold">💬 Diskusi Umum</h2>
+      <p class="mb-4">Tempat ngobrol santai tentang topik apa pun.</p>
+      <textarea id="input-umum" rows="2" class="w-full border rounded p-2 dark:bg-gray-700 dark:border-gray-600" placeholder="Tulis komentar..."></textarea>
+      <button onclick="kirimKomentar('umum')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-2">Kirim</button>
+      <div id="diskusi-umum" class="mt-4 space-y-2"></div>
     </div>
 
-    <div id="content-teknologi" class="tab-content hidden bg-white p-4 rounded shadow">
-      <h2 class="text-xl font-semibold text-gray-800">💻 Teknologi</h2>
-      <p class="text-gray-600 mb-4">Diskusikan perkembangan terbaru di dunia teknologi.</p>
-      <div class="space-y-2">
-        <textarea id="input-teknologi" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
-        <button onclick="kirimKomentar('teknologi')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
-        <div id="diskusi-teknologi" class="mt-4 space-y-2"></div>
-      </div>
+    <div id="content-teknologi" class="tab-content hidden bg-white dark:bg-gray-800 p-4 rounded shadow">
+      <h2 class="text-xl font-semibold">💻 Teknologi</h2>
+      <p class="mb-4">Diskusikan perkembangan terbaru di dunia teknologi.</p>
+      <textarea id="input-teknologi" rows="2" class="w-full border rounded p-2 dark:bg-gray-700 dark:border-gray-600" placeholder="Tulis komentar..."></textarea>
+      <button onclick="kirimKomentar('teknologi')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-2">Kirim</button>
+      <div id="diskusi-teknologi" class="mt-4 space-y-2"></div>
     </div>
 
-    <div id="content-belajar" class="tab-content hidden bg-white p-4 rounded shadow">
-      <h2 class="text-xl font-semibold text-gray-800">📚 Belajar</h2>
-      <p class="text-gray-600 mb-4">Sharing materi belajar, tips, dan sumber edukasi.</p>
-      <div class="space-y-2">
-        <textarea id="input-belajar" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
-        <button onclick="kirimKomentar('belajar')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
-        <div id="diskusi-belajar" class="mt-4 space-y-2"></div>
-      </div>
+    <div id="content-belajar" class="tab-content hidden bg-white dark:bg-gray-800 p-4 rounded shadow">
+      <h2 class="text-xl font-semibold">📚 Belajar</h2>
+      <p class="mb-4">Sharing materi belajar, tips, dan sumber edukasi.</p>
+      <textarea id="input-belajar" rows="2" class="w-full border rounded p-2 dark:bg-gray-700 dark:border-gray-600" placeholder="Tulis komentar..."></textarea>
+      <button onclick="kirimKomentar('belajar')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-2">Kirim</button>
+      <div id="diskusi-belajar" class="mt-4 space-y-2"></div>
     </div>
 
-    <div id="content-saran" class="tab-content hidden bg-white p-4 rounded shadow">
-      <h2 class="text-xl font-semibold text-gray-800">📝 Saran & Kritik</h2>
-      <p class="text-gray-600 mb-4">Berikan masukan agar forum ini makin baik.</p>
-      <div class="space-y-2">
-        <textarea id="input-saran" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
-        <button onclick="kirimKomentar('saran')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
-        <div id="diskusi-saran" class="mt-4 space-y-2"></div>
-      </div>
+    <div id="content-saran" class="tab-content hidden bg-white dark:bg-gray-800 p-4 rounded shadow">
+      <h2 class="text-xl font-semibold">📝 Saran & Kritik</h2>
+      <p class="mb-4">Berikan masukan agar forum ini makin baik.</p>
+      <textarea id="input-saran" rows="2" class="w-full border rounded p-2 dark:bg-gray-700 dark:border-gray-600" placeholder="Tulis komentar..."></textarea>
+      <button onclick="kirimKomentar('saran')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-2">Kirim</button>
+      <div id="diskusi-saran" class="mt-4 space-y-2"></div>
     </div>
 
   </main>
 
-  <footer class="bg-gray-200 text-center text-sm p-4">
+  <footer class="bg-gray-200 dark:bg-gray-700 text-center text-sm p-4 text-gray-700 dark:text-gray-300">
     &copy; 2025 Forum Komunitas
   </footer>
 
   <script>
+    // Toggle Dark Mode
+    function toggleMode() {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("modeGelap", isDark);
+    }
+
     // Tab navigasi
     const tabs = document.querySelectorAll('.tab-button');
     const contents = document.querySelectorAll('.tab-content');
@@ -91,19 +94,41 @@
       });
     });
 
-    // Fungsi kirim komentar
+    // Komentar
     function kirimKomentar(kategori) {
       const input = document.getElementById(`input-${kategori}`);
-      const container = document.getElementById(`diskusi-${kategori}`);
       const text = input.value.trim();
       if (text !== "") {
-        const el = document.createElement("div");
-        el.className = "bg-gray-100 p-2 rounded border";
-        el.textContent = text;
-        container.appendChild(el);
+        const komentar = ambilKomentar(kategori);
+        komentar.push(text);
+        localStorage.setItem(`komentar-${kategori}`, JSON.stringify(komentar));
+        tampilkanKomentar(kategori, komentar);
         input.value = "";
       }
     }
+
+    function ambilKomentar(kategori) {
+      const data = localStorage.getItem(`komentar-${kategori}`);
+      return data ? JSON.parse(data) : [];
+    }
+
+    function tampilkanKomentar(kategori, komentar) {
+      const container = document.getElementById(`diskusi-${kategori}`);
+      container.innerHTML = "";
+      komentar.forEach(text => {
+        const el = document.createElement("div");
+        el.className = "bg-gray-100 dark:bg-gray-700 p-2 rounded border dark:border-gray-600";
+        el.textContent = text;
+        container.appendChild(el);
+      });
+    }
+
+    window.onload = () => {
+      ['umum', 'teknologi', 'belajar', 'saran'].forEach(kategori => {
+        const komentar = ambilKomentar(kategori);
+        tampilkanKomentar(kategori, komentar);
+      });
+    };
   </script>
 
 </body>
