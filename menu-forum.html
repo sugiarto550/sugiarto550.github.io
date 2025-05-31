@@ -26,26 +26,47 @@
     </ul>
   </nav>
 
-  <main class="p-6">
+  <main class="p-6 space-y-6">
 
+    <!-- Template untuk setiap tab -->
     <div id="content-umum" class="tab-content block bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">💬 Diskusi Umum</h2>
-      <p class="text-gray-600">Tempat ngobrol santai tentang topik apa pun.</p>
+      <p class="text-gray-600 mb-4">Tempat ngobrol santai tentang topik apa pun.</p>
+      <div class="space-y-2">
+        <textarea id="input-umum" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
+        <button onclick="kirimKomentar('umum')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
+        <div id="diskusi-umum" class="mt-4 space-y-2"></div>
+      </div>
     </div>
 
     <div id="content-teknologi" class="tab-content hidden bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">💻 Teknologi</h2>
-      <p class="text-gray-600">Diskusikan perkembangan terbaru di dunia teknologi.</p>
+      <p class="text-gray-600 mb-4">Diskusikan perkembangan terbaru di dunia teknologi.</p>
+      <div class="space-y-2">
+        <textarea id="input-teknologi" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
+        <button onclick="kirimKomentar('teknologi')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
+        <div id="diskusi-teknologi" class="mt-4 space-y-2"></div>
+      </div>
     </div>
 
     <div id="content-belajar" class="tab-content hidden bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">📚 Belajar</h2>
-      <p class="text-gray-600">Sharing materi belajar, tips, dan sumber edukasi.</p>
+      <p class="text-gray-600 mb-4">Sharing materi belajar, tips, dan sumber edukasi.</p>
+      <div class="space-y-2">
+        <textarea id="input-belajar" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
+        <button onclick="kirimKomentar('belajar')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
+        <div id="diskusi-belajar" class="mt-4 space-y-2"></div>
+      </div>
     </div>
 
     <div id="content-saran" class="tab-content hidden bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">📝 Saran & Kritik</h2>
-      <p class="text-gray-600">Berikan masukan agar forum ini makin baik.</p>
+      <p class="text-gray-600 mb-4">Berikan masukan agar forum ini makin baik.</p>
+      <div class="space-y-2">
+        <textarea id="input-saran" rows="2" class="w-full border rounded p-2" placeholder="Tulis komentar..."></textarea>
+        <button onclick="kirimKomentar('saran')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim</button>
+        <div id="diskusi-saran" class="mt-4 space-y-2"></div>
+      </div>
     </div>
 
   </main>
@@ -55,25 +76,34 @@
   </footer>
 
   <script>
+    // Tab navigasi
     const tabs = document.querySelectorAll('.tab-button');
     const contents = document.querySelectorAll('.tab-content');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remove active class from all tabs
         tabs.forEach(t => t.classList.remove('active-tab'));
-
-        // Hide all content
         contents.forEach(content => content.classList.add('hidden'));
 
-        // Show the clicked tab's content
         const tabName = tab.getAttribute('data-tab');
         document.getElementById(`content-${tabName}`).classList.remove('hidden');
-
-        // Set active class on current tab
         tab.classList.add('active-tab');
       });
     });
+
+    // Fungsi kirim komentar
+    function kirimKomentar(kategori) {
+      const input = document.getElementById(`input-${kategori}`);
+      const container = document.getElementById(`diskusi-${kategori}`);
+      const text = input.value.trim();
+      if (text !== "") {
+        const el = document.createElement("div");
+        el.className = "bg-gray-100 p-2 rounded border";
+        el.textContent = text;
+        container.appendChild(el);
+        input.value = "";
+      }
+    }
   </script>
 
 </body>
