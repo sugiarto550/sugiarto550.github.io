@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu Forum</title>
+  <title>Menu Forum Interaktif</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .active-tab {
+      @apply border-b-2 border-blue-600 text-blue-800;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -13,35 +18,35 @@
   </header>
 
   <nav class="bg-white shadow mt-2 p-4">
-    <ul class="flex flex-wrap gap-4 text-blue-700 font-medium">
-      <li><a href="#umum" class="hover:underline">💬 Umum</a></li>
-      <li><a href="#teknologi" class="hover:underline">💻 Teknologi</a></li>
-      <li><a href="#belajar" class="hover:underline">📚 Belajar</a></li>
-      <li><a href="#saran" class="hover:underline">📝 Saran & Kritik</a></li>
+    <ul class="flex flex-wrap gap-4 text-blue-700 font-medium" id="menuTabs">
+      <li><button class="tab-button active-tab" data-tab="umum">💬 Umum</button></li>
+      <li><button class="tab-button" data-tab="teknologi">💻 Teknologi</button></li>
+      <li><button class="tab-button" data-tab="belajar">📚 Belajar</button></li>
+      <li><button class="tab-button" data-tab="saran">📝 Saran & Kritik</button></li>
     </ul>
   </nav>
 
-  <main class="p-6 space-y-6">
+  <main class="p-6">
 
-    <section id="umum" class="bg-white p-4 rounded shadow">
+    <div id="content-umum" class="tab-content block bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">💬 Diskusi Umum</h2>
       <p class="text-gray-600">Tempat ngobrol santai tentang topik apa pun.</p>
-    </section>
+    </div>
 
-    <section id="teknologi" class="bg-white p-4 rounded shadow">
+    <div id="content-teknologi" class="tab-content hidden bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">💻 Teknologi</h2>
       <p class="text-gray-600">Diskusikan perkembangan terbaru di dunia teknologi.</p>
-    </section>
+    </div>
 
-    <section id="belajar" class="bg-white p-4 rounded shadow">
+    <div id="content-belajar" class="tab-content hidden bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">📚 Belajar</h2>
       <p class="text-gray-600">Sharing materi belajar, tips, dan sumber edukasi.</p>
-    </section>
+    </div>
 
-    <section id="saran" class="bg-white p-4 rounded shadow">
+    <div id="content-saran" class="tab-content hidden bg-white p-4 rounded shadow">
       <h2 class="text-xl font-semibold text-gray-800">📝 Saran & Kritik</h2>
       <p class="text-gray-600">Berikan masukan agar forum ini makin baik.</p>
-    </section>
+    </div>
 
   </main>
 
@@ -49,6 +54,27 @@
     &copy; 2025 Forum Komunitas
   </footer>
 
+  <script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active-tab'));
+
+        // Hide all content
+        contents.forEach(content => content.classList.add('hidden'));
+
+        // Show the clicked tab's content
+        const tabName = tab.getAttribute('data-tab');
+        document.getElementById(`content-${tabName}`).classList.remove('hidden');
+
+        // Set active class on current tab
+        tab.classList.add('active-tab');
+      });
+    });
+  </script>
+
 </body>
 </html>
-
