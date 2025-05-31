@@ -4,9 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forum Interaktif</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Tambahkan class dark mode jika sebelumnya disimpan di localStorage
+    // Konfigurasi Tailwind agar dark mode pakai class
+    tailwind.config = {
+      darkMode: 'class'
+    };
+
+    // Terapkan dark mode saat load jika sebelumnya sudah dipilih
     if (localStorage.getItem("modeGelap") === "true") {
       document.documentElement.classList.add("dark");
     }
@@ -14,6 +21,7 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 dark:text-white font-sans transition duration-300">
 
+  <!-- Header -->
   <header class="bg-blue-700 dark:bg-gray-800 text-white p-4 shadow flex justify-between items-center">
     <h1 class="text-2xl font-bold">📢 Forum Diskusi</h1>
     <button onclick="toggleMode()" class="bg-white text-blue-700 dark:bg-gray-600 dark:text-white px-3 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
@@ -21,6 +29,7 @@
     </button>
   </header>
 
+  <!-- Navigasi Tab -->
   <nav class="bg-white dark:bg-gray-800 shadow mt-2 p-4">
     <ul class="flex flex-wrap gap-4 text-blue-700 dark:text-blue-300 font-medium" id="menuTabs">
       <li><button class="tab-button active-tab" data-tab="umum">💬 Umum</button></li>
@@ -30,9 +39,10 @@
     </ul>
   </nav>
 
+  <!-- Konten Forum -->
   <main class="p-6 space-y-6">
 
-    <!-- Kategori -->
+    <!-- Umum -->
     <div id="content-umum" class="tab-content block bg-white dark:bg-gray-800 p-4 rounded shadow">
       <h2 class="text-xl font-semibold">💬 Diskusi Umum</h2>
       <p class="mb-4">Tempat ngobrol santai tentang topik apa pun.</p>
@@ -41,6 +51,7 @@
       <div id="diskusi-umum" class="mt-4 space-y-2"></div>
     </div>
 
+    <!-- Teknologi -->
     <div id="content-teknologi" class="tab-content hidden bg-white dark:bg-gray-800 p-4 rounded shadow">
       <h2 class="text-xl font-semibold">💻 Teknologi</h2>
       <p class="mb-4">Diskusikan perkembangan terbaru di dunia teknologi.</p>
@@ -49,6 +60,7 @@
       <div id="diskusi-teknologi" class="mt-4 space-y-2"></div>
     </div>
 
+    <!-- Belajar -->
     <div id="content-belajar" class="tab-content hidden bg-white dark:bg-gray-800 p-4 rounded shadow">
       <h2 class="text-xl font-semibold">📚 Belajar</h2>
       <p class="mb-4">Sharing materi belajar, tips, dan sumber edukasi.</p>
@@ -57,6 +69,7 @@
       <div id="diskusi-belajar" class="mt-4 space-y-2"></div>
     </div>
 
+    <!-- Saran -->
     <div id="content-saran" class="tab-content hidden bg-white dark:bg-gray-800 p-4 rounded shadow">
       <h2 class="text-xl font-semibold">📝 Saran & Kritik</h2>
       <p class="mb-4">Berikan masukan agar forum ini makin baik.</p>
@@ -67,19 +80,21 @@
 
   </main>
 
+  <!-- Footer -->
   <footer class="bg-gray-200 dark:bg-gray-700 text-center text-sm p-4 text-gray-700 dark:text-gray-300">
     &copy; 2025 Forum Komunitas
   </footer>
 
+  <!-- Script JavaScript -->
   <script>
-    // Toggle Dark Mode
+    // Mode Gelap Toggle
     function toggleMode() {
       document.documentElement.classList.toggle("dark");
       const isDark = document.documentElement.classList.contains("dark");
       localStorage.setItem("modeGelap", isDark);
     }
 
-    // Tab navigasi
+    // Navigasi antar tab
     const tabs = document.querySelectorAll('.tab-button');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -94,7 +109,7 @@
       });
     });
 
-    // Komentar
+    // Kirim komentar dan simpan ke localStorage
     function kirimKomentar(kategori) {
       const input = document.getElementById(`input-${kategori}`);
       const text = input.value.trim();
@@ -107,11 +122,13 @@
       }
     }
 
+    // Ambil komentar dari localStorage
     function ambilKomentar(kategori) {
       const data = localStorage.getItem(`komentar-${kategori}`);
       return data ? JSON.parse(data) : [];
     }
 
+    // Tampilkan komentar di layar
     function tampilkanKomentar(kategori, komentar) {
       const container = document.getElementById(`diskusi-${kategori}`);
       container.innerHTML = "";
@@ -123,6 +140,7 @@
       });
     }
 
+    // Saat halaman dimuat
     window.onload = () => {
       ['umum', 'teknologi', 'belajar', 'saran'].forEach(kategori => {
         const komentar = ambilKomentar(kategori);
