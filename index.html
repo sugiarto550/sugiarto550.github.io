@@ -349,14 +349,86 @@
         </div>
     </div>
 
-     <!-- Cookie Consent Pop-up -->
-    <div id="cookieConsent" class="cookie-consent">
-        <p>Website ini menggunakan cookie untuk meningkatkan pengalaman pengguna. Pilih setuju atau tolak cookie kami.</p>
-        <div class="btn-group">
-            <button id="acceptCookie" class="btn btn-outline-custom">Terima Semua Cookies</button>
-            <button id="declineCookie" class="btn btn-outline-danger">Tolak</button>
+      <!-- SCRIPT JS UTAMA -->
+    <script src="script.js"></script>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: #1e2a38; color: white; padding: 20px; z-index: 9999; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; font-family: 'Segoe UI', sans-serif;">
+      <div style="display: flex; align-items: center; gap: 15px; flex: 1; min-width: 300px;">
+        <div style="font-size: 24px;">🍪</div>
+        <div>
+          <strong>Kami menggunakan file cookie</strong><br>
+          Kami mengaktifkan semua cookie secara default untuk memastikan fungsionalitas situs kami, iklan, dan analitik sesuai <a href="#" style="color: #4dc3ff; text-decoration: underline;">Kebijakan Privasi</a>.
         </div>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <button onclick="openCookieSettings()" style="background-color: #2f3e52; border: none; color: white; padding: 10px 16px; border-radius: 6px; cursor: pointer;">
+          Setelan
+        </button>
+        <button onclick="acceptAllCookies()" style="background-color: #00aaff; border: none; color: white; padding: 10px 16px; border-radius: 6px; cursor: pointer;">
+          Terima Semua
+        </button>
+      </div>
     </div>
+
+    <!-- Modal Cookie Settings -->
+    <div id="cookie-settings-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; color: black; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.3); z-index: 10000; max-width: 400px; font-family: 'Segoe UI', sans-serif;">
+      <h3>Setelan Cookie</h3>
+      <p>Silakan pilih jenis cookie yang ingin Anda aktifkan:</p>
+      <label><input type="checkbox" checked disabled> Cookie Fungsional (wajib)</label><br>
+      <label><input type="checkbox" id="ads-cookies" checked> Cookie Iklan</label><br>
+      <label><input type="checkbox" id="analytics-cookies" checked> Cookie Analitik</label><br><br>
+      <button onclick="saveCookieSettings()" style="background-color: #00aaff; color: white; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;">Simpan</button>
+      <button onclick="closeCookieSettings()" style="margin-left: 10px; background-color: gray; color: white; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;">Batal</button>
+    </div>
+
+    <!-- Script Cookie -->
+    <script>
+      function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days*24*60*60*1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      }
+
+      function getCookie(name) {
+        const cname = name + "=";
+        const ca = document.cookie.split(';');
+        for(let c of ca) {
+          c = c.trim();
+          if (c.indexOf(cname) === 0) return c.substring(cname.length);
+        }
+        return "";
+      }
+
+      function acceptAllCookies() {
+        setCookie("cookieConsent", "all", 30);
+        document.getElementById("cookie-consent-banner").style.display = "none";
+      }
+
+      function openCookieSettings() {
+        document.getElementById("cookie-settings-modal").style.display = "block";
+      }
+
+      function closeCookieSettings() {
+        document.getElementById("cookie-settings-modal").style.display = "none";
+      }
+
+      function saveCookieSettings() {
+        const ads = document.getElementById("ads-cookies").checked;
+        const analytics = document.getElementById("analytics-cookies").checked;
+        setCookie("cookieConsent", JSON.stringify({ads, analytics}), 30);
+        document.getElementById("cookie-consent-banner").style.display = "none";
+        closeCookieSettings();
+      }
+
+      window.onload = function () {
+        const cookie = getCookie("cookieConsent");
+        if (cookie) {
+          document.getElementById("cookie-consent-banner").style.display = "none";
+        }
+      }
+    </script>
 
     <!-- Footer -->
     <footer>
