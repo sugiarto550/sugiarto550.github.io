@@ -8,12 +8,10 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Konfigurasi Tailwind agar dark mode pakai class
     tailwind.config = {
       darkMode: 'class'
     };
 
-    // Terapkan dark mode saat load jika sebelumnya sudah dipilih
     if (localStorage.getItem("modeGelap") === "true") {
       document.documentElement.classList.add("dark");
     }
@@ -23,11 +21,11 @@
 
   <!-- Navbar -->
   <div class="bg-white dark:bg-gray-800 shadow px-4 py-2 flex justify-end gap-4 text-sm">
-    <a href="index.html" class="nav-link">Beranda</a>
-    <a href="about.html" class="nav-link active-orange">About Me</a>
-    <a href="contact-us.html" class="nav-link">Contact Us</a>
-    <a href="guest-feedback.html" class="nav-link">Guest Feedback</a>
-    <a href="tabel-perkalian.html" class="nav-link">Fun Area</a>
+    <a href="index.html" class="nav-link text-blue-700 dark:text-blue-300 hover:underline hover:text-blue-900 dark:hover:text-white">Beranda</a>
+    <a href="about.html" class="nav-link text-orange-600 font-semibold underline">About Me</a>
+    <a href="contact-us.html" class="nav-link text-blue-700 dark:text-blue-300 hover:underline hover:text-blue-900 dark:hover:text-white">Contact Us</a>
+    <a href="guest-feedback.html" class="nav-link text-blue-700 dark:text-blue-300 hover:underline hover:text-blue-900 dark:hover:text-white">Guest Feedback</a>
+    <a href="tabel-perkalian.html" class="nav-link text-blue-700 dark:text-blue-300 hover:underline hover:text-blue-900 dark:hover:text-white">Fun Area</a>
   </div>
 
   <!-- Header -->
@@ -96,14 +94,12 @@
 
   <!-- Script JavaScript -->
   <script>
-    // Mode Gelap Toggle
     function toggleMode() {
       document.documentElement.classList.toggle("dark");
       const isDark = document.documentElement.classList.contains("dark");
       localStorage.setItem("modeGelap", isDark);
     }
 
-    // Navigasi antar tab
     const tabs = document.querySelectorAll('.tab-button');
     const contents = document.querySelectorAll('.tab-content');
 
@@ -118,7 +114,6 @@
       });
     });
 
-    // Kirim komentar dan simpan ke localStorage
     function kirimKomentar(kategori) {
       const input = document.getElementById(`input-${kategori}`);
       const text = input.value.trim();
@@ -131,13 +126,11 @@
       }
     }
 
-    // Ambil komentar dari localStorage
     function ambilKomentar(kategori) {
       const data = localStorage.getItem(`komentar-${kategori}`);
       return data ? JSON.parse(data) : [];
     }
 
-    // Tampilkan komentar di layar
     function tampilkanKomentar(kategori, komentar) {
       const container = document.getElementById(`diskusi-${kategori}`);
       container.innerHTML = "";
@@ -149,7 +142,6 @@
       });
     }
 
-    // Saat halaman dimuat
     window.onload = () => {
       ['umum', 'teknologi', 'belajar', 'saran'].forEach(kategori => {
         const komentar = ambilKomentar(kategori);
